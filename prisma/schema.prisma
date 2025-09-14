@@ -1,0 +1,84 @@
+// /prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String   // use hashing!
+  role      Role     @default(USER) // 'USER' or 'ADMIN'
+  posts     BlogPost[]
+  comments  Comment[]
+  createdAt DateTime @default(now())
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model BlogPost {
+  id        String   @id @default(uuid())
+  title     String
+  content   String
+  slug      String   @unique
+  category  String
+  tags      String[]
+  author    User?    @relation(fields: [authorId], references: [id])
+  authorId  String?
+  comments  Comment[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  published Boolean  @default(false)
+}
+
+model PriceEntry {
+  id        String   @id @default(uuid())
+  market    String
+  state     String
+  commodity String
+  price     Float
+  unit      String
+  weekStart DateTime
+  createdAt DateTime @default(now())
+}
+
+model Seller {
+  id        String   @id @default(uuid())
+  name      String
+  products  String[]
+  state     String
+  phone     String
+  email     String
+  verified  Boolean  @default(false)
+  description String
+  createdAt DateTime @default(now())
+}
+
+model MarketCommentary {
+  id        String   @id @default(uuid())
+  text      String
+  weekStart DateTime
+  author    User?    @relation(fields: [authorId], references: [id])
+  authorId  String?
+  createdAt DateTime @default(now())
+}
+
+model Comment {
+  id        String   @id @default(uuid())
+  body      String
+  post      BlogPost? @relation(fields: [postId], references: [id])
+  postId    String?
+  market    MarketCommentary? @relation(fields: [marketId], references: [id])
+  marketId  String?
+  user      User?
+  userId    String?
+  createdAt DateTime @default(now())
+}
