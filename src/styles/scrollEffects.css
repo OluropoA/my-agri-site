@@ -1,0 +1,7 @@
+/* 
+ * Background for scroll effect (fallback)
+ */
+
+html, body {
+  background: transparent;
+}

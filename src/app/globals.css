@@ -1,26 +1,70 @@
+/* Fonts are imported via Next.js font system in layout.tsx */
 @import "tailwindcss";
-
+@import "../styles/brand.css";
+@import "../styles/footer.css";
+@import "../styles/scrollEffects.css";
+@import "../styles/brandOverrides.css"; /* This must be last to override all other styles */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Core Brand Colors */
+  --background: transparent; /* Set to transparent to allow our effect */
+  --foreground: #36454F; /* Charcoal Gray from brand */
+  --brand-green: #2D5016;
+  --brand-gold: #DAA520;
+  --brand-brown: #8B4513;
+  --brand-emerald: #006A4E;
+  --brand-ivory: #F5F5DC;
+  --brand-sage: #87A96B;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--brand-green);
+  --color-secondary: var(--brand-gold);
+  --color-accent: var(--brand-emerald);
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Open Sans', sans-serif;
+  --font-accent: 'Playfair Display', serif;
 }
 
+/* We won't use dark mode for this site to maintain brand consistency */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: transparent; /* Keep transparent to allow our effect */
+    --foreground: #36454F; /* Keep brand colors consistent */
   }
 }
 
 body {
-  background: var(--background);
+  /* Remove fixed background to allow our scroll effect to work */
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-secondary, 'Open Sans', sans-serif);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary, 'Montserrat', sans-serif);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--brand-green); /* Changed from foreground to brand-green */
+  margin-bottom: 0.75rem;
+}
+
+a {
+  color: var(--brand-green);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--brand-emerald);
+}
+
+blockquote {
+  font-family: var(--font-accent, 'Playfair Display', serif);
+  font-style: italic;
+  border-left: 4px solid var(--brand-gold);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--foreground);
 }

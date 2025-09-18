@@ -1,0 +1,13 @@
+/* Footer Specific Styles */
+footer {
+  background-color: #2D5016 !important; /* Forest Green - Primary Brand Color */
+  color: #FFFFFF !important; /* Pure White */
+}
+
+footer a {
+  color: #FFFFFF !important;
+}
+
+footer a:hover {
+  color: #DAA520 !important; /* Golden Harvest - Secondary Brand Color */
+}

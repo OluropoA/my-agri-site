@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dr. Oluropo Apalowo's Agricultural Research Website
 
-## Getting Started
+A professional website showcasing Dr. Oluropo Apalowo's agricultural research work, expertise, and resources for the agricultural community in Nigeria.
 
-First, run the development server:
+## 🌱 Overview
+
+This website serves as a comprehensive digital platform for Dr. Oluropo Apalowo, an agricultural researcher at Nnamdi Azikiwe University. The site includes informational pages about Dr. Apalowo's background and research, a blog for sharing insights, a market watch section for agricultural price trends, and a directory of trusted agricultural sellers.
+
+## 🚀 Features
+
+### Key Pages
+
+- **Home**: Welcome page with featured content, latest blog posts, and market watch highlights
+- **About**: Dr. Apalowo's biography, expertise areas, key achievements, and educational background
+- **Research**: Details on research focus areas, current projects, and research impact
+- **Blog**: Articles on agricultural science, farming practices, and research findings
+- **Market Watch**: Agricultural commodity price tracking with trend analysis
+- **Trusted Sellers**: Directory of verified agricultural producers and suppliers
+- **Contact**: Contact form, location map, and direct contact information
+
+### Admin Dashboard
+
+A secure admin area allows for content management:
+
+- Blog post creation and editing
+- Market price data updates
+- Trusted seller verification and management
+- User message management
+- Website analytics
+
+## 🔧 Technical Stack
+
+- **Framework**: [Next.js](https://nextjs.org) with TypeScript
+- **Styling**: [Tailwind CSS](https://tailwindcss.com) for responsive design
+- **Database**: PostgreSQL with [Prisma ORM](https://prisma.io)
+- **Authentication**: [NextAuth.js](https://next-auth.js.org) for secure admin access
+- **Charts**: [Recharts](https://recharts.org) for market trend visualization
+- **Tables**: [TanStack Table](https://tanstack.com/table) for data display
+- **Icons**: [Lucide React](https://lucide.dev) for consistent iconography
+
+## 🏗️ Project Structure
+
+```
+├── prisma/              # Database schema and migrations
+├── public/              # Static assets
+├── src/
+│   ├── app/            # Next.js app router pages
+│   ├── components/      # Reusable React components
+│   │   ├── Admin/       # Admin dashboard components
+│   │   ├── Blog/        # Blog-related components
+│   │   ├── Contact/     # Contact form components
+│   │   ├── Layout/      # Header, footer, and layout components
+│   │   ├── MarketWatch/ # Market data components
+│   │   ├── Sellers/     # Trusted sellers components
+│   │   └── ui/          # UI utility components
+│   └── lib/            # Utility functions and shared code
+└── DEPLOYMENT.md       # Deployment instructions
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ and npm
+- PostgreSQL database
+
+### Development Setup
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/OluropoA/my-agri-site.git
+cd my-agri-site
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Set up environment variables by copying `.env.example` to `.env.local` and filling in required values
+
+4. Set up the database
+
+```bash
+npx prisma generate
+npx prisma db push
+```
+
+5. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+6. Open [http://localhost:3000](http://localhost:3000) to view the site
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📝 Brand Identity
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The website adheres to Dr. Apalowo's brand identity guidelines:
 
-## Learn More
+- **Colors**: 
+  - Forest Green (#2D5016) - Primary
+  - Golden Harvest (#DAA520) - Accent
+  - Earth Brown (#8B4513) - Tertiary
 
-To learn more about Next.js, take a look at the following resources:
+- **Typography**:
+  - Headings: Montserrat (Bold, Semi-Bold)
+  - Body: Open Sans (Regular, Light)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Brand Voice**: Professional, educational, authoritative yet accessible
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📋 Implementation Notes
 
-## Deploy on Vercel
+- The site uses server components for improved SEO and performance
+- Form submissions are handled through server actions
+- Authentication restricts admin access to authorized personnel
+- Responsive design ensures usability across devices
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔄 Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions, including:
+
+- Vercel deployment (recommended)
+- Self-hosted server options
+- Docker containerization
+- Environment variable configuration
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 👥 Contributors
+
+- Dr. Oluropo Apalowo - Content & Requirements
+- Development Team - Implementation

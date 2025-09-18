@@ -1,0 +1,11 @@
+  // Format phone number
+  const formatPhone = (phone: string | undefined): string => {
+    if (!phone) return "N/A";
+    try {
+      // Handle phone numbers safely
+      return phone.replace(/(\d{4})(\d{3})(\d{4})/, '$1 $2 $3');
+    } catch (e) {
+      // If any error occurs, return the original value
+      return phone;
+    }
+  };

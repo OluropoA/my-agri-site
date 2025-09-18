@@ -1,0 +1,76 @@
+/**
+ * Brand Overrides - These styles ensure consistent branding by overriding other styles
+ */
+
+/* 
+ * Forest Green (#2D5016) - Primary Brand Color for:
+ * - Navigation: Logo text and main navigation elements
+ * - Headings: All section titles and important text
+ * - CTAs: Primary action buttons and key interactive elements
+ * - Icons: Research card icons and contact icons
+ * - Borders: Publication cards and accent elements
+ */
+
+/* Navigation elements */
+.nav-link, .logo-text, 
+.text-brand-green {
+  color: #2D5016 !important;
+}
+
+/* All headings - only when not otherwise explicitly styled */
+h1, h2, h3, h4, h5, h6 {
+  color: #2D5016 !important;
+}
+
+/* Specific heading classes */
+.SectionHeading h2, 
+.font-primary.font-bold,
+.text-xl.font-bold,
+.text-2xl.font-bold, 
+.text-3xl.font-bold {
+  color: #2D5016 !important;
+}
+
+/* Button CTAs */
+.bg-brand-green, 
+button.bg-brand-green, 
+a.bg-brand-green,
+.btn-primary:not(.bg-brand-gold):not(.bg-white):not(.bg-brand-brown):not(.bg-brand-charcoal) {
+  background-color: #2D5016 !important;
+}
+
+/* Text elements using brand green */
+.text-brand-green, 
+.text-brand-primary {
+  color: #2D5016 !important;
+}
+
+/* Borders */
+.border-brand-green, 
+.border-brand-primary {
+  border-color: #2D5016 !important;
+}
+
+/* Card borders */
+.border-brand-green, 
+.hover\:border-brand-green:hover {
+  border-color: #2D5016 !important;
+}
+
+.border-brand-green\/15,
+.border-brand-green\/20,
+.border-brand-green\/30 {
+  border-color: rgba(45, 80, 22, var(--tw-border-opacity, 0.2)) !important;
+}
+
+/* Icons */
+svg.text-brand-green, 
+svg.text-brand-primary,
+.w-1\.5.h-1\.5.rounded-full {
+  color: #2D5016 !important;
+}
+
+/* Research card icons */
+div.p-3.rounded-lg.text-white svg {
+  color: #FFFFFF !important;
+}
