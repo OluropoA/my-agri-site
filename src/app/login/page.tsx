@@ -4,17 +4,18 @@ import { PageHero, Section } from '@/components/Layout/Layout';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Login - Dr. Oluropo Apalowo',
-  description: 'Sign in to access your account on Dr. Oluropo Apalowo\'s agricultural science platform.',
-  keywords: ['login', 'sign in', 'account access', 'agricultural portal']
+  title: 'Admin Access - Dr. Oluropo Apalowo',
+  description: 'Administrative access portal for authorized personnel only.',
+  keywords: ['admin', 'login', 'administrative access'],
+  robots: 'noindex, nofollow' // Prevent search engines from indexing this page
 };
 
 export default function LoginPage() {
   return (
     <div className="min-h-screen">
       <PageHero 
-        title="Sign In" 
-        subtitle="Access your account to manage your agricultural data"
+        title="Administrative Access" 
+        subtitle="Authorized personnel only - Please enter your credentials"
         backgroundImage="/images/auth-header.jpg"
         align="center"
         minHeight="small"
@@ -26,10 +27,11 @@ export default function LoginPage() {
             <LoginForm />
             
             <div className="mt-8 pt-6 border-t border-gray-100 text-center">
-              <p className="text-sm text-brand-charcoal/70 font-secondary">
-                Don't have an account?{' '}
-                <Link href="/register" className="text-brand-green hover:text-brand-emerald font-semibold font-primary">
-                  Sign up now
+              <p className="text-xs text-brand-charcoal/50 font-secondary">
+                This is a restricted area for authorized administrators only.
+                <br />
+                <Link href="/" className="text-brand-green hover:text-brand-emerald font-medium">
+                  Return to main site
                 </Link>
               </p>
             </div>

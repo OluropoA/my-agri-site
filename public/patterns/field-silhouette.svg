@@ -1,0 +1,20 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Distant hills -->
+  <path d="M0 200C200 180 400 220 600 200C800 180 1000 220 1200 200V400H0V200Z" fill="#2D5016" opacity="0.05"/>
+  
+  <!-- Mid-ground vegetation -->
+  <path d="M0 250C150 230 350 270 600 250C850 230 1050 270 1200 250V400H0V250Z" fill="#2D5016" opacity="0.08"/>
+  
+  <!-- Foreground crops -->
+  <path d="M0 300C100 280 300 320 600 300C900 280 1100 320 1200 300V400H0V300Z" fill="#2D5016" opacity="0.1"/>
+  
+  <!-- Scattered plant silhouettes -->
+  <g opacity="0.06">
+    <path d="M100 320L102 300L104 320" stroke="#2D5016" stroke-width="1"/>
+    <path d="M300 330L302 310L304 330" stroke="#2D5016" stroke-width="1"/>
+    <path d="M500 325L502 305L504 325" stroke="#2D5016" stroke-width="1"/>
+    <path d="M700 335L702 315L704 335" stroke="#2D5016" stroke-width="1"/>
+    <path d="M900 320L902 300L904 320" stroke="#2D5016" stroke-width="1"/>
+    <path d="M1100 330L1102 310L1104 330" stroke="#2D5016" stroke-width="1"/>
+  </g>
+</svg>

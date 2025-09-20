@@ -13,7 +13,9 @@ import {
   LogOut,
   Menu,
   X,
-  ChevronRight
+  ChevronRight,
+  ExternalLink,
+  Home
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -108,8 +110,15 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
 
           {/* Mobile sidebar content */}
           <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
-            <div className="flex-shrink-0 flex items-center px-4">
+            <div className="flex-shrink-0 flex items-center justify-between px-4 mb-4">
               <span className="text-lg font-bold text-[#2D5016]">Dr. Apalowo Admin</span>
+              <Link
+                href="/"
+                className="p-2 text-gray-400 hover:text-[#2D5016] hover:bg-gray-100 rounded-lg transition-colors"
+                title="Back to Main Site"
+              >
+                <ExternalLink className="h-4 w-4" />
+              </Link>
             </div>
             <nav className="mt-5 px-2 space-y-1">
               {navigation.map((item) => (
@@ -166,8 +175,15 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
       <div className="hidden lg:flex lg:w-64 lg:flex-col lg:fixed lg:inset-y-0">
         <div className="flex-1 flex flex-col min-h-0 bg-white border-r border-gray-200">
           <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-            <div className="flex items-center flex-shrink-0 px-4">
+            <div className="flex items-center justify-between flex-shrink-0 px-4 mb-4">
               <span className="text-lg font-bold text-[#2D5016]">Dr. Apalowo Admin</span>
+              <Link
+                href="/"
+                className="p-2 text-gray-400 hover:text-[#2D5016] hover:bg-gray-100 rounded-lg transition-colors"
+                title="Back to Main Site"
+              >
+                <ExternalLink className="h-4 w-4" />
+              </Link>
             </div>
             <nav className="mt-5 flex-1 px-2 space-y-1">
               {navigation.map((item) => (

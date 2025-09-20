@@ -74,12 +74,16 @@ export default function Header() {
                 </button>
               </div>
             ) : (
-              <Link
-                href="/login"
-                className="inline-flex items-center rounded-md bg-brand-green px-3 py-1.5 text-sm font-medium text-white hover:bg-brand-emerald font-primary"
-              >
-                Sign In
-              </Link>
+              // Hidden sign-in for security - only accessible via direct URL /login
+              // This prevents exposing admin capabilities to regular visitors
+              <div className="hidden">
+                <Link
+                  href="/login"
+                  className="inline-flex items-center rounded-md bg-brand-green px-3 py-1.5 text-sm font-medium !text-white hover:bg-brand-emerald hover:!text-white font-primary"
+                >
+                  Sign In
+                </Link>
+              </div>
             )}
             
             {/* Mobile menu button */}

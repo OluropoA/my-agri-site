@@ -5,6 +5,7 @@ import Header from "@/components/Layout/Header";
 import AppFooter from "@/components/Layout/AppFooter";
 import ClientProviders from "@/components/Layout/ClientProviders";
 import ClientBackgroundEffect from "@/components/Effects/ClientBackgroundEffect";
+import LayoutWrapper from "@/components/Layout/LayoutWrapper";
 
 // Brand Fonts
 const montserrat = Montserrat({ 
@@ -56,9 +57,11 @@ export default function RootLayout({
         <ClientProviders>
           {/* Background color transition effect - positioned at root level */}
           <ClientBackgroundEffect />
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <AppFooter />
+          <LayoutWrapper>
+            <Header />
+            <main className="flex-grow">{children}</main>
+            <AppFooter />
+          </LayoutWrapper>
         </ClientProviders>
       </body>
     </html>
