@@ -15,7 +15,7 @@ const ContactForm = () => {
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
-    info: { error: false, msg: null }
+    info: { error: false, msg: null as string | null }
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -52,7 +52,7 @@ const ContactForm = () => {
         message: ''
       });
       
-    } catch (error) {
+    } catch {
       setStatus({
         submitted: false,
         submitting: false,

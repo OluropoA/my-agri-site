@@ -1,7 +1,7 @@
 "use client";
 
+import React from 'react';
 import { usePathname } from 'next/navigation';
-import { ReactElement, cloneElement } from 'react';
 
 interface LayoutWrapperProps {
   children: React.ReactNode;
@@ -15,7 +15,10 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
   
   if (isAdminRoute) {
     // For admin routes, only render the main content (skip header/footer)
-    return <>{childrenArray.find((child: any) => child?.type?.name === 'main' || child?.props?.className?.includes('flex-grow'))}</>;
+    return <>{childrenArray.find((child: React.ReactNode) => 
+      React.isValidElement(child) && 
+      (child?.type === 'main' || child?.props?.className?.includes('flex-grow'))
+    )}</>;
   }
   
   // For non-admin routes, render everything

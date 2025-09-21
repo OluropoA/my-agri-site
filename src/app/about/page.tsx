@@ -2,14 +2,34 @@ import { Metadata } from 'next';
 import { GraduationCap, Award, Users, Globe, ChevronRight } from 'lucide-react'
 import Image from 'next/image';
 import { PageHero, Section, SectionHeading } from '@/components/Layout/Layout';
+import StructuredData from '@/components/SEO/StructuredData';
+import { generateMetadata, generateBreadcrumbSchema, generatePersonSchema } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'About - Dr. Oluropo Apalowo',
-  description: 'Learn about Dr. Oluropo Apalowo, agricultural scientist specializing in nematology, crop protection, and sustainable farming.',
-  keywords: ['agricultural scientist', 'nematology', 'crop protection', 'sustainable farming', 'plant virology', 'IUPAC']
-};
+export const metadata: Metadata = generateMetadata({
+  title: "About Dr. Oluropo Apalowo - Agricultural Scientist & Researcher",
+  description: "Meet Dr. Oluropo Apalowo, a leading agricultural scientist at Nnamdi Azikiwe University specializing in nematology, plant virology, and sustainable farming practices. Discover his research, expertise, and contributions to agricultural science.",
+  keywords: [
+    "Dr. Oluropo Apalowo biography",
+    "agricultural scientist Nigeria",
+    "nematology expert",
+    "plant virology researcher",
+    "sustainable farming specialist",
+    "Nnamdi Azikiwe University faculty",
+    "crop protection research",
+    "agricultural education Nigeria"
+  ],
+  url: "https://oluropoapalowo.com/about",
+  type: "profile"
+});
 
 export default function AboutPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "https://oluropoapalowo.com" },
+    { name: "About", url: "https://oluropoapalowo.com/about" }
+  ]);
+
+  const personSchema = generatePersonSchema();
+
   const achievements = [
     {
       icon: <GraduationCap className="w-6 h-6" />,
@@ -50,14 +70,13 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen">
+      <StructuredData data={[breadcrumbSchema, personSchema]} />
       <PageHero 
-        title="About Dr. Oluropo Apalowo" 
-        subtitle="Dedicated to advancing agricultural science through innovative research, sustainable practices, and cutting-edge technology solutions."
-        backgroundImage="/images/about-header.jpg"
-        align="center"
-        size="default"
+        title="About Dr. Apalowo" 
+        subtitle="Agricultural Scientist & Researcher"
+        backgroundImage="/images/about-hero.jpg"
+        align="left"
       />
-
       <Section bgColor="white">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Story */}

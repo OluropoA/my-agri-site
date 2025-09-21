@@ -9,7 +9,7 @@ interface BlogCommentFormProps {
   postId: string;
 }
 
-const BlogCommentForm: React.FC<BlogCommentFormProps> = ({ postId }) => {
+function BlogCommentForm({ postId: _postId }: { postId: string }) {
   const { data: session } = useSession();
   const [comment, setComment] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -61,7 +61,7 @@ const BlogCommentForm: React.FC<BlogCommentFormProps> = ({ postId }) => {
       });
       
       // In a real app, you would update the comments list with the newly added comment
-    } catch (error) {
+    } catch {
       setSubmitStatus({
         type: 'error',
         message: 'An error occurred while submitting your comment. Please try again.'

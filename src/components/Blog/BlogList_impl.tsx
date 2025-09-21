@@ -3,8 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, Filter, ChevronDown, Calendar, User, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Calendar, User, ArrowRight, Search } from 'lucide-react';
 
 // Type definitions
 export interface BlogPost {
@@ -181,7 +180,7 @@ const BlogList: React.FC<BlogListProps> = ({ initialPosts, categories }) => {
                     />
                   ) : (
                     <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-brand-green/10 to-brand-emerald/20">
-                      <span className="text-brand-green font-semibold font-primary">Dr. Apalowo's Blog</span>
+                      <span className="text-brand-green font-semibold font-primary">Dr. Apalowo&apos;s Blog</span>
                     </div>
                   )}
                   <div className="absolute top-2 left-2">

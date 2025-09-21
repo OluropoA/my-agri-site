@@ -9,7 +9,7 @@ interface MarketCommentFormProps {
   marketId: string;
 }
 
-const MarketCommentForm: React.FC<MarketCommentFormProps> = ({ marketId }) => {
+function MarketCommentForm({ marketId: _marketId }: { marketId: string }) {
   const { data: session } = useSession();
   const [comment, setComment] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -61,7 +61,7 @@ const MarketCommentForm: React.FC<MarketCommentFormProps> = ({ marketId }) => {
       });
       
       // In a real app, you would update the comments list with the newly added comment
-    } catch (error) {
+    } catch {
       setSubmitStatus({
         type: 'error',
         message: 'An error occurred while submitting your comment. Please try again.'

@@ -12,7 +12,6 @@ import {
   CalendarDays
 } from 'lucide-react';
 import { PageHero, Section } from '@/components/Layout/Layout';
-import { Button } from '@/components/ui/button';
 
 // Get dynamic metadata for the page
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
@@ -275,7 +274,7 @@ const formatPhone = (phone: string | undefined): string => {
   if (!phone) return "N/A";
   try {
     return phone.replace(/(\d{4})(\d{3})(\d{4})/, '$1 $2 $3');
-  } catch (e) {
+  } catch {
     return phone;
   }
 };

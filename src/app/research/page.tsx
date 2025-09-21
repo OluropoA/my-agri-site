@@ -1,16 +1,34 @@
 import { Metadata } from 'next';
-import { Microscope, Leaf, Zap, Globe, ArrowRight, CheckCircle } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { PageHero, Section, SectionHeading } from '@/components/Layout/Layout'
 import Link from 'next/link'
+import StructuredData from '@/components/SEO/StructuredData';
+import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Research - Dr. Oluropo Apalowo',
-  description: 'Explore Dr. Oluropo Apalowo\'s agricultural research projects, publications, and scientific contributions.',
-  keywords: ['agricultural research', 'nematology', 'plant virology', 'AI in agriculture', 'climate-smart agriculture']
-};
+export const metadata: Metadata = generateMetadata({
+  title: "Research - Agricultural Science & Innovation",
+  description: "Explore cutting-edge agricultural research in nematology, plant virology, sustainable farming, and crop protection. Discover innovative solutions for modern agricultural challenges and food security.",
+  keywords: [
+    "agricultural research projects",
+    "nematology studies Nigeria",
+    "plant virology research",
+    "sustainable farming innovations",
+    "crop protection research",
+    "agricultural biotechnology",
+    "food security research",
+    "climate-smart agriculture",
+    "integrated pest management research"
+  ],
+  url: "https://oluropoapalowo.com/research",
+  type: "website"
+});
 
 export default function ResearchPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "https://oluropoapalowo.com" },
+    { name: "Research", url: "https://oluropoapalowo.com/research" }
+  ]);
   const researchAreas = [
     {
       icon: '🔬',
@@ -61,6 +79,7 @@ export default function ResearchPage() {
 
   return (
     <div className="min-h-screen">
+      <StructuredData data={breadcrumbSchema} />
       <PageHero 
         title="Research Focus Areas" 
         subtitle="Advancing agricultural science through interdisciplinary research that addresses global food security challenges and environmental sustainability."

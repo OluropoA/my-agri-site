@@ -3,12 +3,9 @@
 import { useState } from 'react';
 import { 
   Settings,
-  User,
-  Globe,
   Bell,
   Shield,
   Database,
-  Mail,
   Palette,
   Save,
   Eye,
@@ -59,7 +56,7 @@ export default function SettingsAdminPage() {
     { id: 'content', name: 'Content', icon: Database }
   ];
 
-  const handleInputChange = (field: string, value: any) => {
+  const handleInputChange = (field: string, value: string | boolean | number) => {
     setSettings(prev => ({
       ...prev,
       [field]: value

@@ -1,7 +1,8 @@
 "use client";
 
-// Simple mock authentication utilities for development
-import { useState } from 'react';
+// Simple mock authentication utilities for dev
+
+import { useEffect } from 'react';
 
 type User = {
   id: string;

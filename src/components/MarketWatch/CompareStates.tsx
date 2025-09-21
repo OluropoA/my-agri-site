@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { TrendingUp, TrendingDown } from 'lucide-react';
 import { PriceEntry } from './MarketTable_impl';
 
 interface CompareStatesProps {

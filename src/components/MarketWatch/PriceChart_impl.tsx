@@ -14,11 +14,6 @@ import {
 import { Calendar, Filter, ChevronDown } from 'lucide-react';
 import { PriceEntry } from './MarketTable_impl';
 
-// Type definitions for chart data
-interface ChartData {
-  date: string;
-  [commodity: string]: string | number;
-}
 
 interface PriceChartProps {
   priceHistory: PriceEntry[];
@@ -96,7 +91,7 @@ const PriceChart: React.FC<PriceChartProps> = ({
     });
     
     // Group by date
-    const groupedByDate = filteredData.reduce<Record<string, any>>((acc, entry) => {
+    const groupedByDate = filteredData.reduce<Record<string, { date: string; [commodity: string]: number | string }>>((acc, entry) => {
       const dateKey = formatDate(entry.weekStart);
       if (!acc[dateKey]) {
         acc[dateKey] = { date: dateKey };
@@ -107,10 +102,10 @@ const PriceChart: React.FC<PriceChartProps> = ({
     
     // Convert to array and sort by date
     return Object.values(groupedByDate)
-      .sort((a: any, b: any) => {
+      .sort((a: { date: string }, b: { date: string }) => {
         return new Date(a.date).getTime() - new Date(b.date).getTime();
       });
-  }, [priceHistory, selectedState, selectedMarket, selectedCommodities, timeRange]);
+  }, [priceHistory, selectedState, selectedMarket, selectedCommodities, timeRange, getTimeRangeDate]);
   
   // Generate chart colors
   const getLineColor = (index: number): string => {
@@ -301,7 +296,7 @@ const PriceChart: React.FC<PriceChartProps> = ({
                     <button
                       key={option.value}
                       onClick={() => {
-                        setTimeRange(option.value as any);
+                        setTimeRange(option.value as '1month' | '3months' | '6months' | '1year');
                         toggleFilter('time');
                       }}
                       className={`block px-4 py-2 text-sm w-full text-left hover:bg-gray-100 ${

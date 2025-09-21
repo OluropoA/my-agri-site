@@ -92,7 +92,7 @@ const SellerList: React.FC<SellerListProps> = ({
     try {
       // Handle phone numbers safely
       return phone.replace(/(\d{4})(\d{3})(\d{4})/, '$1 $2 $3');
-    } catch (e) {
+    } catch {
       // If any error occurs, return the original value
       return phone;
     }

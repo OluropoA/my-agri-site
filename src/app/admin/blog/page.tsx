@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   Plus, 
   Search, 
@@ -9,13 +10,10 @@ import {
   Eye, 
   Edit, 
   Trash2, 
-  Filter,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
-  Calendar,
-  User,
-  Tag
+  Calendar
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import AdminLayout from '@/components/Admin/AdminLayout';
@@ -266,10 +264,12 @@ export default function BlogAdminPage() {
                     <td className="px-6 py-4">
                       <div className="flex items-center">
                         <div className="flex-shrink-0 h-12 w-12">
-                          <img
+                          <Image
                             className="h-12 w-12 rounded-lg object-cover"
                             src={post.coverImage}
                             alt={post.title}
+                            width={48}
+                            height={48}
                           />
                         </div>
                         <div className="ml-4">

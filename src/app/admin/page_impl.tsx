@@ -158,7 +158,7 @@ export default function AdminDashboardPage() {
                     Research Collaboration Inquiry
                   </h3>
                   <p className="text-xs text-gray-600 mt-1 line-clamp-2">
-                    Hello Dr. Apalowo, I'm interested in collaborating on sustainable farming practices...
+                    Hello Dr. Apalowo, I&apos;m interested in collaborating on sustainable farming practices...
                   </p>
                   <div className="flex items-center justify-between mt-2">
                     <span className="text-xs text-gray-500">

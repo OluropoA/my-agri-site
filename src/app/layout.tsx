@@ -6,6 +6,8 @@ import AppFooter from "@/components/Layout/AppFooter";
 import ClientProviders from "@/components/Layout/ClientProviders";
 import ClientBackgroundEffect from "@/components/Effects/ClientBackgroundEffect";
 import LayoutWrapper from "@/components/Layout/LayoutWrapper";
+import StructuredData from "@/components/SEO/StructuredData";
+import { generateMetadata, generatePersonSchema, generateOrganizationSchema } from "@/lib/seo";
 
 // Brand Fonts
 const montserrat = Montserrat({ 
@@ -29,30 +31,47 @@ const playfairDisplay = Playfair_Display({
   weight: ["400", "700"]
 });
 
-export const metadata: Metadata = {
-  title: "Dr. Oluropo Apalowo | Agricultural Scientist",
-  description: "Agricultural science resources, research, market trends, and expert insights by Dr. Oluropo Apalowo",
-  keywords: ["agricultural science", "crop protection", "nematology", "plant virology", "sustainable farming", "AI in agriculture"],
-  authors: [{ name: "Dr. Oluropo Apalowo" }],
-  creator: "Dr. Oluropo Apalowo",
-  publisher: "Nnamdi Azikiwe University",
-  openGraph: {
-    type: "website",
-    locale: "en_NG",
-    url: "https://oluropoapalowo.com",
-    title: "Dr. Oluropo Apalowo | Agricultural Scientist",
-    description: "Agricultural science resources, research, market trends, and expert insights by Dr. Oluropo Apalowo",
-    siteName: "Dr. Oluropo Apalowo"
-  },
-};
+export const metadata: Metadata = generateMetadata({
+  title: "Agricultural Scientist & Researcher",
+  description: "Leading agricultural scientist specializing in nematology, plant virology, and sustainable farming practices. Research, insights, and market intelligence for modern agriculture.",
+  keywords: [
+    "agricultural research",
+    "sustainable farming Nigeria",
+    "crop protection specialist",
+    "agricultural technology",
+    "food security research"
+  ],
+  url: "https://oluropoapalowo.com",
+  type: "website"
+});
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const personSchema = generatePersonSchema();
+  const organizationSchema = generateOrganizationSchema();
+
   return (
-    <html lang="en" className={`${montserrat.variable} ${openSans.variable} ${playfairDisplay.variable}`}>
+    <html lang="en-NG" className={`${montserrat.variable} ${openSans.variable} ${playfairDisplay.variable}`}>
+      <head>
+        {/* Structured Data */}
+        <StructuredData data={[personSchema, organizationSchema]} />
+        
+        {/* Favicons and App Icons */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+        
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* DNS Prefetch for performance */}
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+      </head>
       <body className="antialiased min-h-screen flex flex-col font-secondary" style={{ background: 'transparent' }}>
         <ClientProviders>
           {/* Background color transition effect - positioned at root level */}

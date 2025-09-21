@@ -22,8 +22,8 @@ const Hero = () => {
               </h1>
               
               <p className="font-secondary text-xl text-brand-charcoal/70 leading-relaxed max-w-2xl">
-                "Bridging traditional agricultural wisdom with cutting-edge scientific innovation to create 
-                sustainable solutions for Africa's food security challenges."
+                &ldquo;Bridging traditional agricultural wisdom with cutting-edge scientific innovation to create 
+                sustainable solutions for Africa&apos;s food security challenges.&rdquo;
               </p>
             </div>
 

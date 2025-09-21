@@ -74,7 +74,7 @@ export default function AdminPage() {
         {/* Welcome Section */}
         <div>
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Welcome back, Dr. Apalowo!</h1>
-          <p className="text-gray-600">Here's what's happening with your agricultural science platform today.</p>
+          <p className="text-gray-600">Here&apos;s what&apos;s happening with your agricultural science platform today.</p>
         </div>
 
         {/* Stats Grid */}

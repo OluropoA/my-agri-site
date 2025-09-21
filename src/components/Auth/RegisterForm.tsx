@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { signIn } from 'next-auth/react';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { Input } from '@/components/ui/input';
 import { AlertTriangle, Mail, Lock, User } from 'lucide-react';
 
 export default function RegisterForm() {
@@ -56,8 +57,8 @@ export default function RegisterForm() {
       
       // Redirect to login page after successful registration
       router.push('/login?registered=true');
-    } catch (err: any) {
-      setError(err.message || 'Something went wrong');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong');
       setIsLoading(false);
     }
   };

@@ -15,7 +15,7 @@ export default function SellerNotFound() {
           <h1 className="text-3xl font-bold text-brand-charcoal font-primary">Seller Not Found</h1>
           
           <p className="text-brand-charcoal/70 max-w-md font-secondary">
-            We couldn't find the seller you're looking for. They may have been removed from our trusted sellers directory.
+            We couldn&apos;t find the seller you&apos;re looking for. They may have been removed from our trusted sellers directory.
           </p>
           
           <Link href="/trusted-sellers" className="mt-8">

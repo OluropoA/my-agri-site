@@ -58,13 +58,6 @@ const mockSellers = [
 export default function SellersAdminPage() {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const formatDate = (date: Date) => {
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'short', 
-      day: 'numeric' 
-    });
-  };
 
   const getStatusBadge = (status: string) => {
     if (status === 'verified') {

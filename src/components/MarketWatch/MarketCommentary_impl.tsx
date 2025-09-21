@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Calendar, Clock, User, ThumbsUp, MessageSquare, Share2 } from 'lucide-react';
+import { MessageCircle, Calendar } from 'lucide-react';
 import { useSession } from 'next-auth/react';
+import MarketCommentForm from './MarketCommentForm_impl';
+import { formatDistanceToNow } from 'date-fns';
 
 interface MarketCommentaryProps {
   id: string;
@@ -28,14 +30,14 @@ interface MarketCommentaryProps {
 }
 
 const MarketCommentary: React.FC<MarketCommentaryProps> = ({
-  id,
+  id: _id,
   text,
   weekStart,
   author,
   createdAt,
   comments
 }) => {
-  const { data: session } = useSession();
+  const { data: _session } = useSession();
   const [showShareOptions, setShowShareOptions] = useState(false);
   const [liked, setLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(15); // Mock initial like count

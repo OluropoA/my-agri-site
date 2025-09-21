@@ -228,7 +228,7 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post, relatedPosts, com
                       />
                     ) : (
                       <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-brand-green/10 to-brand-emerald/20">
-                        <span className="text-brand-green font-semibold font-primary">Dr. Apalowo's Blog</span>
+                        <span className="text-brand-green font-semibold font-primary">Dr. Apalowo&apos;s Blog</span>
                       </div>
                     )}
                   </div>

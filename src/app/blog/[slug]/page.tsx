@@ -84,7 +84,7 @@ async function getRelatedPosts(currentPost: BlogPost): Promise<BlogPost[]> {
 }
 
 // Mock comments data
-async function getCommentsByPostId(postId: string) {
+async function getCommentsByPostId(_postId: string) {
   return [
     {
       id: '101',
