@@ -38,7 +38,7 @@ export default function MarketInsights() {
     }
   ];
 
-  const getTrendIcon = (trend: string, change: number) => {
+  const getTrendIcon = (trend: string) => {
     if (trend === "up") return <TrendingUp className="h-4 w-4 text-red-600" />;
     if (trend === "down") return <TrendingDown className="h-4 w-4 text-green-600" />;
     return <Minus className="h-4 w-4 text-gray-400" />;
@@ -75,7 +75,7 @@ export default function MarketInsights() {
                   </p>
                 </div>
                 <div className={`flex items-center ${getTrendColor(item.trend)}`}>
-                  {getTrendIcon(item.trend, item.change)}
+                  {getTrendIcon(item.trend)}
                 </div>
               </div>
               
@@ -90,7 +90,7 @@ export default function MarketInsights() {
 
               {item.change !== 0 && (
                 <div className={`flex items-center text-sm font-medium ${getTrendColor(item.trend)}`}>
-                  {getTrendIcon(item.trend, item.change)}
+                  {getTrendIcon(item.trend)}
                   <span className="ml-1">
                     {Math.abs(item.change).toFixed(2)}% from last week
                   </span>

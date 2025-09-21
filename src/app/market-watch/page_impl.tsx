@@ -198,7 +198,7 @@ export default async function MarketWatchPage() {
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Weekly food price updates, market trends, and expert analysis to keep you informed
-            about Nigeria's agricultural markets.
+            about Nigeria&apos;s agricultural markets.
           </p>
         </div>
         

@@ -96,8 +96,13 @@ export function Section({
   bgColor = "white", // white, light, green, gold, etc.
   className = "",
   containerClassName = "",
+}: {
+  children: React.ReactNode;
+  bgColor?: string;
+  className?: string;
+  containerClassName?: string;
 }) {
-  const bgClasses = {
+  const bgClasses: Record<string, string> = {
     white: "bg-white",
     light: "bg-brand-ivory",
     green: "bg-brand-green text-white",
@@ -106,7 +111,7 @@ export function Section({
   };
 
   return (
-    <section className={`py-16 ${bgClasses[bgColor]} ${className}`}>
+    <section className={`py-16 ${bgClasses[bgColor] || bgClasses.white} ${className}`}>
       <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${containerClassName}`}>
         {children}
       </div>

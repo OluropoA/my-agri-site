@@ -17,7 +17,7 @@ export default function RegisterPage() {
         subtitle="Join our agricultural community to access exclusive content"
         backgroundImage="/images/auth-header.jpg"
         align="center"
-        minHeight="small"
+        size="small"
       />
       
       <Section bgColor="white" className="-mt-12">

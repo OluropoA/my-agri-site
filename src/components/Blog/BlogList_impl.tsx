@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Calendar, User, ArrowRight, Search } from 'lucide-react';
+import { Calendar, User, ArrowRight, Search, Filter, ChevronDown } from 'lucide-react';
 
 // Type definitions
 export interface BlogPost {

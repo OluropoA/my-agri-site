@@ -60,25 +60,25 @@ const PriceChart: React.FC<PriceChartProps> = ({
     }).format(new Date(date));
   };
   
-  // Get time range for filtering
-  const getTimeRangeDate = (): Date => {
-    const today = new Date();
-    switch (timeRange) {
-      case '1month':
-        return new Date(today.setMonth(today.getMonth() - 1));
-      case '3months':
-        return new Date(today.setMonth(today.getMonth() - 3));
-      case '6months':
-        return new Date(today.setMonth(today.getMonth() - 6));
-      case '1year':
-        return new Date(today.setFullYear(today.getFullYear() - 1));
-      default:
-        return new Date(today.setMonth(today.getMonth() - 3));
-    }
-  };
-  
   // Process data for chart
   const chartData = useMemo(() => {
+    // Get time range for filtering
+    const getTimeRangeDate = (): Date => {
+      const today = new Date();
+      switch (timeRange) {
+        case '1month':
+          return new Date(today.setMonth(today.getMonth() - 1));
+        case '3months':
+          return new Date(today.setMonth(today.getMonth() - 3));
+        case '6months':
+          return new Date(today.setMonth(today.getMonth() - 6));
+        case '1year':
+          return new Date(today.setFullYear(today.getFullYear() - 1));
+        default:
+          return new Date(today.setMonth(today.getMonth() - 3));
+      }
+    };
+    
     // Apply filters
     const timeRangeDate = getTimeRangeDate();
     const filteredData = priceHistory.filter((entry) => {
@@ -105,7 +105,7 @@ const PriceChart: React.FC<PriceChartProps> = ({
       .sort((a: { date: string }, b: { date: string }) => {
         return new Date(a.date).getTime() - new Date(b.date).getTime();
       });
-  }, [priceHistory, selectedState, selectedMarket, selectedCommodities, timeRange, getTimeRangeDate]);
+  }, [priceHistory, selectedState, selectedMarket, selectedCommodities, timeRange]);
   
   // Generate chart colors
   const getLineColor = (index: number): string => {

@@ -5,10 +5,6 @@ import { Send } from 'lucide-react';
 import { useSession } from 'next-auth/react';
 import { Button } from '@/components/ui/button';
 
-interface BlogCommentFormProps {
-  postId: string;
-}
-
 function BlogCommentForm({ postId: _postId }: { postId: string }) {
   const { data: session } = useSession();
   const [comment, setComment] = useState('');

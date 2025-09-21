@@ -34,6 +34,7 @@ export default function SettingsAdminPage() {
     // Security Settings
     twoFactorAuth: false,
     sessionTimeout: 30,
+    apiKey: 'sk-1234567890abcdef',
     
     // Display Settings
     theme: 'light',

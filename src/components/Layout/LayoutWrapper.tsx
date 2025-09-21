@@ -17,7 +17,11 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
     // For admin routes, only render the main content (skip header/footer)
     return <>{childrenArray.find((child: React.ReactNode) => 
       React.isValidElement(child) && 
-      (child?.type === 'main' || child?.props?.className?.includes('flex-grow'))
+      (child?.type === 'main' || 
+       (child?.props && typeof child.props === 'object' && child.props !== null &&
+        'className' in child.props && 
+        typeof (child.props as { className?: string }).className === 'string' && 
+        (child.props as { className: string }).className.includes('flex-grow')))
     )}</>;
   }
   

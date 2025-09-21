@@ -2,7 +2,6 @@
 
 // Simple mock authentication utilities for dev
 
-import { useEffect } from 'react';
 
 type User = {
   id: string;

@@ -2,10 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { MessageCircle, Calendar } from 'lucide-react';
+import { Calendar, Clock, Share2, ThumbsUp, MessageSquare } from 'lucide-react';
 import { useSession } from 'next-auth/react';
-import MarketCommentForm from './MarketCommentForm_impl';
-import { formatDistanceToNow } from 'date-fns';
 
 interface MarketCommentaryProps {
   id: string;

@@ -88,7 +88,7 @@ export default function AboutPage() {
             
             <div className="prose prose-lg text-brand-charcoal/80 font-secondary">
               <p>
-                Hi, I'm Dr. Oluropo Apalowo, a guy passionate about solving some of agriculture's toughest challenges. 
+                Hi, I&apos;m Dr. Oluropo Apalowo, a guy passionate about solving some of agriculture&apos;s toughest challenges. 
                 Although, I have a background in Plant pathology by studying those tiny but powerful organisms that silently 
                 attack crops. However, my interests extend across the bigger picture of crop protection, climate change, 
                 and food security.
@@ -108,7 +108,7 @@ export default function AboutPage() {
               </p>
               
               <p>
-                I started this blog because I believe knowledge shouldn't stay locked in research papers. Farmers, students, 
+                I started this blog because I believe knowledge shouldn&apos;t stay locked in research papers. Farmers, students, 
                 policymakers, and the general public all deserve access to insights that can make a real difference.
               </p>
               
@@ -210,10 +210,10 @@ export default function AboutPage() {
             />
             <div className="space-y-4 text-brand-charcoal/80 font-secondary">
               <p>
-                I believe that science should work for everyone, not just other scientists. That's why my approach focuses on creating solutions that farmers can actually use in their fields, not just ideas that look good on paper.
+                I believe that science should work for everyone, not just other scientists. That&apos;s why my approach focuses on creating solutions that farmers can actually use in their fields, not just ideas that look good on paper.
               </p>
               <p>
-                Growing up in Nigeria, I've seen firsthand how agricultural challenges impact communities. My work combines rigorous science with practical know-how, making sure that what works in the lab can also work for a smallholder farmer with limited resources.
+                Growing up in Nigeria, I&apos;ve seen firsthand how agricultural challenges impact communities. My work combines rigorous science with practical know-how, making sure that what works in the lab can also work for a smallholder farmer with limited resources.
               </p>
               <div className="pt-4">
                 <ul className="space-y-3">

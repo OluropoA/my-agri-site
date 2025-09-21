@@ -18,7 +18,7 @@ export default function LoginPage() {
         subtitle="Authorized personnel only - Please enter your credentials"
         backgroundImage="/images/auth-header.jpg"
         align="center"
-        minHeight="small"
+        size="small"
       />
       
       <Section bgColor="white" className="-mt-12">
