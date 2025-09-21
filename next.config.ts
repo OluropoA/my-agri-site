@@ -21,9 +21,16 @@ const nextConfig: NextConfig = {
       }
     ],
   },
+  experimental: {
+    // Ensure proper module resolution
+    esmExternals: true,
+  },
   turbopack: {
     // Configure root directory to avoid lockfile warning
     root: process.cwd(),
+    resolveAlias: {
+      '@': './src',
+    },
   }
 };
 
