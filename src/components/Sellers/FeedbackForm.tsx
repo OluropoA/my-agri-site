@@ -9,7 +9,7 @@ interface FeedbackFormProps {
   onSubmit: (rating: number, comment: string) => Promise<void>;
 }
 
-export default function FeedbackForm({ sellerId, currentRating, totalFeedback, onSubmit }: FeedbackFormProps) {
+export default function FeedbackForm({ currentRating, totalFeedback, onSubmit }: FeedbackFormProps) {
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
   const [comment, setComment] = useState('');

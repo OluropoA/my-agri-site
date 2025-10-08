@@ -25,7 +25,6 @@ export default function FeedbackSection({ sellerId: _sellerId, currentRating, to
 
   return (
     <FeedbackForm
-      sellerId={sellerId}
       currentRating={currentRating}
       totalFeedback={totalFeedback}
       onSubmit={handleSubmit}
