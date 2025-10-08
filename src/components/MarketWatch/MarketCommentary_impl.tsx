@@ -28,14 +28,14 @@ interface MarketCommentaryProps {
 }
 
 const MarketCommentary: React.FC<MarketCommentaryProps> = ({
-  id: _id,
+  id,
   text,
   weekStart,
   author,
   createdAt,
   comments
 }) => {
-  const { data: _session } = useSession();
+  const { data: session } = useSession();
   const [showShareOptions, setShowShareOptions] = useState(false);
   const [liked, setLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(15); // Mock initial like count

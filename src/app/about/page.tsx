@@ -118,7 +118,7 @@ export default function AboutPage() {
           <SectionHeading 
             title="My Approach to Agricultural Science" 
             subtitle="Bridging research and practical solutions"
-            centered
+            align="center"
           />
           
           <div className="prose prose-lg mx-auto text-brand-charcoal/80 font-secondary">
