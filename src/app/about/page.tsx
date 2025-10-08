@@ -79,6 +79,20 @@ export default function AboutPage() {
       />
       <Section bgColor="white">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Mobile Photo - Only visible on mobile */}
+          <div className="lg:hidden mb-8">
+            <div className="relative aspect-[3/4] h-[480px] rounded-xl overflow-hidden shadow-md border border-brand-brown/20">
+              <Image
+                src="/images/dr-apalowo-hero.jpg"
+                alt="Dr. Oluropo Apalowo, an agricultural scientist, smiling in a red turtleneck and checkered blazer"
+                fill
+                className="object-cover object-top"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-green/80 to-transparent"></div>
+            </div>
+          </div>
+
           {/* Story */}
           <div className="space-y-6">
             <SectionHeading 
@@ -160,8 +174,8 @@ export default function AboutPage() {
 
           {/* Achievements & Photo */}
           <div className="max-w-3xl mx-auto space-y-8">
-            {/* Photo */}
-            <div className="relative aspect-[3/4] lg:h-[660px] rounded-xl overflow-hidden shadow-md border border-brand-brown/20 mb-16">
+            {/* Photo - Only visible on desktop */}
+            <div className="hidden lg:block relative aspect-[3/4] lg:h-[660px] rounded-xl overflow-hidden shadow-md border border-brand-brown/20 mb-16">
               <Image
                 src="/images/dr-apalowo-hero.jpg"
                 alt="Dr. Oluropo Apalowo, an agricultural scientist, smiling in a red turtleneck and checkered blazer"
