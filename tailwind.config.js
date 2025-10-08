@@ -16,6 +16,12 @@ module.exports = {
         'brand-ivory': '#F5F5DC', // Soft backgrounds
         'brand-charcoal': '#36454F', // Body text and subtle elements
         'brand-sage': '#87A96B', // Secondary graphics
+        
+        // Social Media Colors
+        'facebook': '#1877F2',
+        'twitter': '#1DA1F2',
+        'instagram': '#E4405F',
+        'linkedin': '#0A66C2'
       },
       fontFamily: {
         'primary': ['Montserrat', 'sans-serif'],

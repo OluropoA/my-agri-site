@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { Search, Filter, MapPin, Mail, Phone, Check, ChevronDown } from 'lucide-react';
+import { Search, Filter, MapPin, Phone, Check, ChevronDown, Star, Facebook, Twitter, Instagram } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -12,9 +12,16 @@ export interface Seller {
   products: string;
   state: string;
   phone: string;
-  email: string;
+  socialMedia?: {
+    facebook?: string;
+    twitter?: string;
+    instagram?: string;
+  };
+  type: 'Farmer' | 'Processor' | 'Distributor' | 'Equipment Provider';
   verified: boolean;
   description: string;
+  feedbackCount?: number;
+  averageRating?: number;
   createdAt: Date;
 }
 
@@ -270,7 +277,7 @@ const SellerList: React.FC<SellerListProps> = ({
                   {truncate(seller.description, 100)}
                 </p>
                 
-                {/* Contact Buttons */}
+                {/* Contact & Social */}
                 <div className="flex flex-wrap gap-2">
                   <a 
                     href={`tel:${seller.phone}`}
@@ -279,13 +286,48 @@ const SellerList: React.FC<SellerListProps> = ({
                     <Phone className="h-3.5 w-3.5 mr-1" />
                     <span className="text-xs">{formatPhone(seller.phone)}</span>
                   </a>
-                  <a 
-                    href={`mailto:${seller.email}`}
-                    className="inline-flex items-center px-3 py-1.5 border border-gray-300 rounded-md text-sm text-gray-700 bg-gray-50 hover:bg-gray-100"
-                  >
-                    <Mail className="h-3.5 w-3.5 mr-1" />
-                    <span className="text-xs">Email</span>
-                  </a>
+                  {seller.socialMedia?.facebook && (
+                    <a 
+                      href={seller.socialMedia.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-3 py-1.5 border border-gray-300 rounded-md text-sm text-facebook hover:bg-gray-100"
+                    >
+                      <Facebook className="h-3.5 w-3.5" />
+                    </a>
+                  )}
+                  {seller.socialMedia?.twitter && (
+                    <a 
+                      href={seller.socialMedia.twitter}
+                      target="_blank"
+                      rel="noopener noreferrer" 
+                      className="inline-flex items-center px-3 py-1.5 border border-gray-300 rounded-md text-sm text-twitter hover:bg-gray-100"
+                    >
+                      <Twitter className="h-3.5 w-3.5" />
+                    </a>
+                  )}
+                  {seller.socialMedia?.instagram && (
+                    <a 
+                      href={seller.socialMedia.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-3 py-1.5 border border-gray-300 rounded-md text-sm text-instagram hover:bg-gray-100"
+                    >
+                      <Instagram className="h-3.5 w-3.5" />
+                    </a>
+                  )}
+                </div>
+                
+                {/* Seller Type & Rating */}
+                <div className="flex items-center justify-between mt-2 text-xs text-brand-charcoal/70">
+                  <span className="font-medium">{seller.type}</span>
+                  {seller.averageRating && seller.feedbackCount && (
+                    <div className="flex items-center gap-1">
+                      <Star className="h-3.5 w-3.5 text-brand-gold" />
+                      <span>{seller.averageRating.toFixed(1)}</span>
+                      <span>({seller.feedbackCount})</span>
+                    </div>
+                  )}
                 </div>
                 
                 {/* View Profile Button */}

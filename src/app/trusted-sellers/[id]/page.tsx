@@ -5,13 +5,17 @@ import Image from 'next/image';
 import { 
   ArrowLeft, 
   MapPin, 
-  Mail, 
   Phone, 
   Globe, 
   Check,
-  CalendarDays
+  CalendarDays,
+  Facebook,
+  Twitter,
+  Instagram,
+  Star
 } from 'lucide-react';
 import { PageHero, Section } from '@/components/Layout/Layout';
+import FeedbackSection from '@/components/Sellers/FeedbackSection';
 
 // Get dynamic metadata for the page
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
@@ -44,14 +48,19 @@ async function getRawSellers() {
       description: 'Family-owned farm with over 20 years of experience growing organic vegetables and staple crops.',
       contactInfo: {
         phone: '+234 801 234 5678',
-        email: 'info@greenfields.ng',
         website: 'https://www.greenfields.ng'
       },
+      socialMedia: {
+        facebook: 'https://facebook.com/greenfieldsng',
+        instagram: 'https://instagram.com/greenfields_ng',
+        twitter: 'https://twitter.com/greenfields_ng'
+      },
+      type: 'Farmer',
       verified: true,
-      rating: 4.8,
+      averageRating: 4.8,
+      feedbackCount: 156,
       imageUrl: 'https://images.unsplash.com/photo-1605000797499-95a51c5269ae',
       yearEstablished: 2003,
-      certifications: ['Organic Certification', 'NAFDAC Registration'],
       additionalInfo: 'Green Fields Farm Ltd. is a pioneer in sustainable and organic farming practices in the Lagos area. The farm uses environmentally friendly methods to grow high-quality produce that is distributed to local markets and restaurants. They also offer farm tours and agricultural training for students and aspiring farmers.',
       gallery: [
         'https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8',
@@ -71,13 +80,18 @@ async function getRawSellers() {
       description: 'Specializing in free-range poultry products with no antibiotics or growth hormones.',
       contactInfo: {
         phone: '+234 802 345 6789',
-        email: 'sales@sunshinepoultry.com'
+        website: 'https://www.sunshinepoultry.com'
       },
+      socialMedia: {
+        facebook: 'https://facebook.com/sunshinepoultry',
+        instagram: 'https://instagram.com/sunshine_poultry'
+      },
+      type: 'Farmer',
       verified: true,
-      rating: 4.5,
+      averageRating: 4.5,
+      feedbackCount: 89,
       imageUrl: 'https://images.unsplash.com/photo-1563874093519-ca5eda5cd875',
       yearEstablished: 2010,
-      certifications: ['Poultry Association of Nigeria Member', 'NAFDAC Registration'],
       additionalInfo: 'Sunshine Poultry has grown from a small family operation to one of the leading suppliers of free-range poultry products in Southwestern Nigeria. Their commitment to animal welfare and quality has earned them numerous awards in the agricultural sector.',
       gallery: [
         'https://images.unsplash.com/photo-1548550023-2bdb3c5beed7',
@@ -97,14 +111,18 @@ async function getRawSellers() {
       description: 'Providing high-quality seeds for various crops including drought-resistant varieties.',
       contactInfo: {
         phone: '+234 803 456 7890',
-        email: 'contact@bestseeds.ng',
         website: 'https://www.bestseeds.ng'
       },
+      socialMedia: {
+        twitter: 'https://twitter.com/bestseeds_ng',
+        facebook: 'https://facebook.com/bestseedsng'
+      },
+      type: 'Distributor',
       verified: true,
-      rating: 4.7,
+      averageRating: 4.7,
+      feedbackCount: 234,
       imageUrl: 'https://images.unsplash.com/photo-1620655135631-f76985089bc8',
       yearEstablished: 2015,
-      certifications: ['National Agricultural Seeds Council Registration'],
       additionalInfo: 'Best Seeds Nigeria works closely with agricultural research institutions to develop and distribute high-yielding, disease-resistant seed varieties adapted to local growing conditions. They provide technical support and training to farmers on proper seed handling and crop management.',
       gallery: [
         'https://images.unsplash.com/photo-1574943320809-36a3687f8d3e',
@@ -123,11 +141,15 @@ async function getRawSellers() {
       products: ['Organic fertilizers', 'Compost', 'Soil amendments'],
       description: 'Manufacturing eco-friendly fertilizers from organic waste materials for sustainable farming.',
       contactInfo: {
-        phone: '+234 804 567 8901',
-        email: 'info@organicfertilizers.com'
+        phone: '+234 804 567 8901'
       },
+      socialMedia: {
+        facebook: 'https://facebook.com/organicfertilizers'
+      },
+      type: 'Processor',
       verified: false,
-      rating: 4.2,
+      averageRating: 4.2,
+      feedbackCount: 45,
       imageUrl: 'https://images.unsplash.com/photo-1585202300815-8c441947a8ea',
       yearEstablished: 2018
     },
@@ -142,14 +164,18 @@ async function getRawSellers() {
       products: ['Potatoes', 'Vegetables', 'Fruits'],
       description: 'A cooperative of small-scale farmers specializing in highland crops from the Jos Plateau.',
       contactInfo: {
-        phone: '+234 805 678 9012',
-        email: 'sales@freshharvest.org'
+        phone: '+234 805 678 9012'
       },
+      socialMedia: {
+        facebook: 'https://facebook.com/freshharvestcoop',
+        instagram: 'https://instagram.com/freshharvest_ng'
+      },
+      type: 'Farmer',
       verified: true,
-      rating: 4.6,
+      averageRating: 4.6,
+      feedbackCount: 167,
       imageUrl: 'https://images.unsplash.com/photo-1594489428504-5c4759b101fa',
       yearEstablished: 2012,
-      certifications: ['Cooperative Registration'],
       additionalInfo: 'Fresh Harvest Cooperative unites over 250 small-scale farmers in the Jos Plateau region. By pooling resources and sharing knowledge, they have been able to improve production methods and gain better access to markets. The cooperative focuses on crops that thrive in the cool highland climate.',
       gallery: [
         'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37',
@@ -169,14 +195,18 @@ async function getRawSellers() {
       description: 'Providing modern agricultural technology solutions to smallholder farmers.',
       contactInfo: {
         phone: '+234 806 789 0123',
-        email: 'support@agritech.ng',
         website: 'https://www.agritech.ng'
       },
+      socialMedia: {
+        twitter: 'https://twitter.com/agritech_ng',
+        linkedin: 'https://linkedin.com/company/agritech-ng'
+      },
+      type: 'Equipment Provider',
       verified: true,
-      rating: 4.4,
+      averageRating: 4.4,
+      feedbackCount: 78,
       imageUrl: 'https://images.unsplash.com/photo-1584179234953-0b776df7d29c',
       yearEstablished: 2019,
-      certifications: ['Tech Partners Association Member'],
       additionalInfo: 'AgriTech Solutions is bridging the gap between technology and traditional farming in Nigeria. They design and implement affordable technological solutions that help smallholder farmers increase productivity and reduce post-harvest losses.',
       gallery: [
         'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d',
@@ -195,11 +225,15 @@ async function getRawSellers() {
       products: ['Palm oil', 'Palm kernel oil', 'Biofuel'],
       description: 'Sustainably processing palm products with fair trade practices.',
       contactInfo: {
-        phone: '+234 807 890 1234',
-        email: 'orders@palmoil.com'
+        phone: '+234 807 890 1234'
       },
+      socialMedia: {
+        facebook: 'https://facebook.com/palmoil_processors'
+      },
+      type: 'Processor',
       verified: false,
-      rating: 4.0,
+      averageRating: 4.0,
+      feedbackCount: 34,
       imageUrl: 'https://images.unsplash.com/photo-1575386674304-a1d4a4915ec6',
       yearEstablished: 2014
     },
@@ -214,14 +248,18 @@ async function getRawSellers() {
       products: ['Fresh milk', 'Yogurt', 'Cheese'],
       description: 'Artisanal dairy products from grass-fed cattle with no artificial additives.',
       contactInfo: {
-        phone: '+234 808 901 2345',
-        email: 'info@dairymasters.ng'
+        phone: '+234 808 901 2345'
       },
+      socialMedia: {
+        facebook: 'https://facebook.com/dairymasters_ng',
+        instagram: 'https://instagram.com/dairymasters'
+      },
+      type: 'Processor',
       verified: true,
-      rating: 4.9,
+      averageRating: 4.9,
+      feedbackCount: 203,
       imageUrl: 'https://images.unsplash.com/photo-1550583724-b2692b85b150',
       yearEstablished: 2016,
-      certifications: ['NAFDAC Registration', 'ISO 9001'],
       additionalInfo: 'Dairy Masters is revolutionizing the local dairy industry with their modern processing techniques and commitment to quality. They source milk from their own herd of grass-fed cattle as well as from local farmers who meet their strict quality standards.',
       gallery: [
         'https://images.unsplash.com/photo-1528498033373-3c6c08e93d79',
@@ -363,13 +401,6 @@ export default async function SellerDetailPage({ params }: { params: { id: strin
                       </div>
                     )}
                     
-                    {seller.contactInfo.email && (
-                      <div className="flex items-start mb-3 text-brand-charcoal font-secondary">
-                        <Mail className="h-4 w-4 mt-0.5 mr-2 flex-shrink-0 text-brand-emerald" />
-                        <a href={`mailto:${seller.contactInfo.email}`} className="hover:text-brand-green">{seller.contactInfo.email}</a>
-                      </div>
-                    )}
-                    
                     {seller.contactInfo.website && (
                       <div className="flex items-start mb-3 text-brand-charcoal font-secondary">
                         <Globe className="h-4 w-4 mt-0.5 mr-2 flex-shrink-0 text-brand-emerald" />
@@ -385,30 +416,74 @@ export default async function SellerDetailPage({ params }: { params: { id: strin
                     )}
                   </div>
                   
-                  {/* Certifications */}
-                  {seller.certifications && seller.certifications.length > 0 && (
+                  {/* Social Media Links */}
+                  {seller.socialMedia && Object.keys(seller.socialMedia).length > 0 && (
                     <div className="mt-4">
-                      <h2 className="text-sm font-medium text-brand-charcoal/60 uppercase tracking-wider mb-1 font-primary">Certifications</h2>
-                      <ul className="list-disc list-inside text-brand-charcoal/80 space-y-1">
-                        {seller.certifications.map((cert, index) => (
-                          <li key={index} className="font-secondary">{cert}</li>
-                        ))}
-                      </ul>
+                      <h2 className="text-sm font-medium text-brand-charcoal/60 uppercase tracking-wider mb-3 font-primary">Social Media</h2>
+                      <div className="flex gap-3">
+                        {seller.socialMedia.facebook && (
+                          <a
+                            href={seller.socialMedia.facebook}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-facebook hover:opacity-80"
+                            aria-label="Facebook"
+                          >
+                            <Facebook className="h-5 w-5" />
+                          </a>
+                        )}
+                        {seller.socialMedia.twitter && (
+                          <a
+                            href={seller.socialMedia.twitter}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-twitter hover:opacity-80"
+                            aria-label="Twitter"
+                          >
+                            <Twitter className="h-5 w-5" />
+                          </a>
+                        )}
+                        {seller.socialMedia.instagram && (
+                          <a
+                            href={seller.socialMedia.instagram}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-instagram hover:opacity-80"
+                            aria-label="Instagram"
+                          >
+                            <Instagram className="h-5 w-5" />
+                          </a>
+                        )}
+                      </div>
                     </div>
                   )}
+
+                  {/* Seller Type */}
+                  <div className="mt-4">
+                    <h2 className="text-sm font-medium text-brand-charcoal/60 uppercase tracking-wider mb-1 font-primary">Category</h2>
+                    <div className="text-brand-charcoal/80 font-secondary">{seller.type}</div>
+                  </div>
                 </div>
               </div>
             </div>
             
             {/* Description */}
-            {seller.additionalInfo && (
-              <div className="bg-white rounded-xl overflow-hidden shadow-md border border-brand-brown/15 p-6">
-                <h2 className="text-lg font-bold text-brand-charcoal mb-3 font-primary">About {seller.name}</h2>
-                <p className="text-brand-charcoal/80 font-secondary whitespace-pre-line">{seller.additionalInfo}</p>
-              </div>
-            )}
-            
-            {/* Image Gallery */}
+              {/* Description */}
+              {seller.additionalInfo && (
+                <div className="bg-white rounded-xl overflow-hidden shadow-md border border-brand-brown/15 p-6">
+                  <h2 className="text-lg font-bold text-brand-charcoal mb-3 font-primary">About {seller.name}</h2>
+                  <p className="text-brand-charcoal/80 font-secondary whitespace-pre-line">{seller.additionalInfo}</p>
+                </div>
+              )}
+
+              {/* Feedback Section */}
+              <FeedbackSection
+                sellerId={seller.id}
+                currentRating={seller.averageRating}
+                totalFeedback={seller.feedbackCount}
+              />
+              
+              {/* Image Gallery */}            {/* Image Gallery */}
             {seller.gallery && seller.gallery.length > 0 && (
               <div className="bg-white rounded-xl overflow-hidden shadow-md border border-brand-brown/15 p-6">
                 <h2 className="text-lg font-bold text-brand-charcoal mb-4 font-primary">Gallery</h2>
@@ -467,16 +542,6 @@ export default async function SellerDetailPage({ params }: { params: { id: strin
                   </a>
                 )}
                 
-                {seller.contactInfo.email && (
-                  <a 
-                    href={`mailto:${seller.contactInfo.email}`}
-                    className="flex items-center justify-center w-full bg-white border border-brand-green text-brand-green hover:bg-brand-green/5 py-2 px-4 rounded-md transition-colors duration-200 font-primary"
-                  >
-                    <Mail className="h-4 w-4 mr-2" />
-                    Send Email
-                  </a>
-                )}
-                
                 {seller.contactInfo.website && (
                   <a 
                     href={seller.contactInfo.website}
@@ -487,6 +552,45 @@ export default async function SellerDetailPage({ params }: { params: { id: strin
                     <Globe className="h-4 w-4 mr-2" />
                     Visit Website
                   </a>
+                )}
+                
+                {/* Social Media Links */}
+                {seller.socialMedia && Object.keys(seller.socialMedia).length > 0 && (
+                  <div className="flex justify-center gap-4 mt-4">
+                    {seller.socialMedia.facebook && (
+                      <a
+                        href={seller.socialMedia.facebook}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-facebook hover:opacity-80"
+                        aria-label="Facebook"
+                      >
+                        <Facebook className="h-6 w-6" />
+                      </a>
+                    )}
+                    {seller.socialMedia.twitter && (
+                      <a
+                        href={seller.socialMedia.twitter}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-twitter hover:opacity-80"
+                        aria-label="Twitter"
+                      >
+                        <Twitter className="h-6 w-6" />
+                      </a>
+                    )}
+                    {seller.socialMedia.instagram && (
+                      <a
+                        href={seller.socialMedia.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-instagram hover:opacity-80"
+                        aria-label="Instagram"
+                      >
+                        <Instagram className="h-6 w-6" />
+                      </a>
+                    )}
+                  </div>
                 )}
               </div>
             </div>
