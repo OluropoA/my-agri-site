@@ -1,4 +1,4 @@
-import { PageHero, Section, SectionHeading } from '@/components/Layout/Layout';
+import { PageHero, Section } from '@/components/Layout/Layout';
 
 export default function ClimateChangePage() {
   return (

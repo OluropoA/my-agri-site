@@ -1,4 +1,4 @@
-import { PageHero, Section, SectionHeading } from '@/components/Layout/Layout';
+import { PageHero, Section } from '@/components/Layout/Layout';
 
 export default function IUPACPage() {
   return (
@@ -14,7 +14,7 @@ export default function IUPACPage() {
         <div className="max-w-4xl mx-auto">
           <div className="prose prose-lg text-brand-charcoal/80 font-secondary">
             <p>
-              As part of the IUPAC Next Generation Program, we're working on innovative solutions 
+              As part of the IUPAC Next Generation Program, we&apos;re working on innovative solutions 
               that bridge traditional agricultural practices with modern technology. Our collaboration 
               focuses on:
             </p>
@@ -27,7 +27,7 @@ export default function IUPACPage() {
             </ul>
 
             <p>
-              Through this collaboration, we're able to access global resources and expertise 
+              Through this collaboration, we&apos;re able to access global resources and expertise 
               while contributing to the international body of agricultural research knowledge.
             </p>
           </div>

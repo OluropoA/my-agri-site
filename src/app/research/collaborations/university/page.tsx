@@ -1,4 +1,4 @@
-import { PageHero, Section, SectionHeading } from '@/components/Layout/Layout';
+import { PageHero, Section } from '@/components/Layout/Layout';
 
 export default function UniversityResearchPage() {
   return (
@@ -27,7 +27,7 @@ export default function UniversityResearchPage() {
 
             <p>
               Through collaborative research projects with students and fellow faculty members, 
-              we're working to develop practical solutions that can be implemented by local farmers 
+              we&apos;re working to develop practical solutions that can be implemented by local farmers 
               and agricultural practitioners.
             </p>
           </div>
