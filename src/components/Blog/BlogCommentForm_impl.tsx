@@ -5,7 +5,7 @@ import { Send } from 'lucide-react';
 import { useSession } from 'next-auth/react';
 import { Button } from '@/components/ui/button';
 
-function BlogCommentForm({ postId: _postId }: { postId: string }) {
+function BlogCommentForm({ postId }: { postId: string }) {
   const { data: session } = useSession();
   const [comment, setComment] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);

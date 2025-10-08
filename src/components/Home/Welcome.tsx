@@ -8,8 +8,8 @@ export default function Welcome() {
           Welcome!
         </h2>
         <p className="text-xl text-brand-charcoal/80 font-secondary leading-relaxed">
-          Whether you're a farmer, a student, a researcher, a buyer, a seller, or simply curious about
-          agriculture and food security, there's something here for you.
+          Whether you&apos;re a farmer, a student, a researcher, a buyer, a seller, or simply curious about
+          agriculture and food security, there&apos;s something here for you.
         </p>
       </div>
     </section>

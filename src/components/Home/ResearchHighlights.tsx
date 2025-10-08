@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Microscope, Leaf, Zap, Globe } from 'lucide-react';
+import { ArrowRight, Microscope, Leaf, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function ResearchHighlights() {
