@@ -112,6 +112,37 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      {/* Education Section */}
+      <Section bgColor="light">
+        <div className="max-w-4xl mx-auto">
+          <SectionHeading 
+            title="Education" 
+            subtitle="Academic Background"
+            align="center"
+          />
+          
+          <div className="space-y-6 max-w-2xl mx-auto">
+            <div className="border-l-2 border-brand-green pl-4 pb-6">
+              <div className="text-sm text-brand-gold font-medium font-primary">2023</div>
+              <div className="font-semibold text-brand-charcoal font-primary">Ph.D. Crop Protection</div>
+              <div className="text-brand-charcoal/70 font-secondary">University of Ilorin, Kwara State</div>
+            </div>
+            
+            <div className="border-l-2 border-brand-green pl-4 pb-6">
+              <div className="text-sm text-brand-gold font-medium font-primary">2016</div>
+              <div className="font-semibold text-brand-charcoal font-primary">M.Sc. Crop Protection</div>
+              <div className="text-brand-charcoal/70 font-secondary">University of Ilorin, Kwara State</div>
+            </div>
+            
+            <div className="border-l-2 border-brand-green pl-4 pb-6">
+              <div className="text-sm text-brand-gold font-medium font-primary">2011</div>
+              <div className="font-semibold text-brand-charcoal font-primary">B.Tech (Hons.) Agronomy</div>
+              <div className="text-brand-charcoal/70 font-secondary">Ladoke Akintola University of Technology</div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
       {/* My Approach Section */}
       <Section bgColor="light">
         <div className="max-w-4xl mx-auto">
