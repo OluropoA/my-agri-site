@@ -16,7 +16,7 @@ function MarketCommentForm({ marketId: _marketId }: { marketId: string }) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!comment.trim()) {
       setSubmitStatus({
         type: 'error',
@@ -24,14 +24,14 @@ function MarketCommentForm({ marketId: _marketId }: { marketId: string }) {
       });
       return;
     }
-    
+
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: null });
-    
+
     try {
       // In a real implementation, this would be a fetch call to an API endpoint
       // For now, we'll just simulate a successful submission
-      
+
       // Mock API call
       // const response = await fetch('/api/comments/market', {
       //   method: 'POST',
@@ -43,19 +43,19 @@ function MarketCommentForm({ marketId: _marketId }: { marketId: string }) {
       //     body: comment,
       //   }),
       // });
-      
+
       // if (!response.ok) throw new Error('Failed to submit comment');
-      
+
       // Simulate API delay
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       // Reset form state
       setComment('');
       setSubmitStatus({
         type: 'success',
-        message: 'Your comment has been submitted successfully.'
+        message: 'Your comment has been submitted and is awaiting approval.'
       });
-      
+
       // In a real app, you would update the comments list with the newly added comment
     } catch {
       setSubmitStatus({
@@ -70,7 +70,7 @@ function MarketCommentForm({ marketId: _marketId }: { marketId: string }) {
   return (
     <div className="bg-white rounded-lg border border-gray-200 p-6">
       <h3 className="text-lg font-semibold text-gray-900 mb-4">Add Your Comment</h3>
-      
+
       {session ? (
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -83,13 +83,13 @@ function MarketCommentForm({ marketId: _marketId }: { marketId: string }) {
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#2D5016] focus:border-[#2D5016]"
             />
           </div>
-          
+
           <div className="flex items-center justify-between">
             <div className="text-sm text-gray-500">
               Commenting as <span className="font-medium">{session.user?.name}</span>
             </div>
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               className="bg-[#2D5016] hover:bg-[#2D5016]/90 text-white"
               disabled={isSubmitting}
             >
@@ -101,13 +101,12 @@ function MarketCommentForm({ marketId: _marketId }: { marketId: string }) {
               )}
             </Button>
           </div>
-          
+
           {submitStatus.message && (
-            <div className={`mt-3 p-3 rounded-md ${
-              submitStatus.type === 'success' 
+            <div className={`mt-3 p-3 rounded-md ${submitStatus.type === 'success'
                 ? 'bg-green-50 text-green-800 border border-green-200'
                 : 'bg-red-50 text-red-800 border border-red-200'
-            }`}>
+              }`}>
               {submitStatus.message}
             </div>
           )}
@@ -118,7 +117,7 @@ function MarketCommentForm({ marketId: _marketId }: { marketId: string }) {
           <p className="text-gray-600 mb-4">
             You need to be signed in to leave a comment on this market analysis.
           </p>
-          <Button 
+          <Button
             asChild
             className="bg-[#2D5016] hover:bg-[#2D5016]/90 text-white"
           >

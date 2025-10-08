@@ -53,7 +53,7 @@ function BlogCommentForm({ postId: _postId }: { postId: string }) {
       setComment('');
       setSubmitStatus({
         type: 'success',
-        message: 'Your comment has been submitted successfully.'
+        message: 'Your comment has been submitted and is awaiting approval.'
       });
       
       // In a real app, you would update the comments list with the newly added comment

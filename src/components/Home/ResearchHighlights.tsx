@@ -6,31 +6,24 @@ export default function ResearchHighlights() {
   const researchAreas = [
     {
       icon: <Microscope className="h-8 w-8" />,
-      title: "Nematology",
-      description: "Advanced research on plant parasitic nematodes and sustainable control methods for improved crop yields.",
+      title: "Most Recent Article",
+      description: "Stay up to date with our latest research findings and agricultural insights.",
       color: "bg-blue-100 text-blue-600",
-      link: "/research#nematology"
+      link: "/blog"
     },
     {
       icon: <Leaf className="h-8 w-8" />,
-      title: "Plant Virology",
-      description: "Comprehensive studies on plant viruses, particularly cucumber mosaic virus and cassava mosaic geminiviruses.",
+      title: "Research Focus",
+      description: "Exploring critical areas in sustainable agriculture and crop protection.",
       color: "bg-green-100 text-green-600",
-      link: "/research#virology"
-    },
-    {
-      icon: <Zap className="h-8 w-8" />,
-      title: "AI in Agriculture",
-      description: "Pioneering applications of artificial intelligence in crop protection and precision agriculture.",
-      color: "bg-purple-100 text-purple-600",
-      link: "/research#ai-agriculture"
+      link: "/research"
     },
     {
       icon: <Globe className="h-8 w-8" />,
-      title: "Climate-Smart Agriculture",
-      description: "Developing resilient agricultural systems that adapt to climate change while maintaining productivity.",
+      title: "Market Watch",
+      description: "Stay informed with real-time agricultural commodity prices and market trends.",
       color: "bg-amber-100 text-amber-600",
-      link: "/research#climate-smart"
+      link: "/market-watch"
     }
   ];
 

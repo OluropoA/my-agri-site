@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import HomeHero from '@/components/Home/HomeHero';
+import Welcome from '@/components/Home/Welcome';
 import ResearchHighlights from '@/components/Home/ResearchHighlights';
 import MarketInsights from '@/components/Home/MarketInsights';
 import TrustedSellers from '@/components/Home/TrustedSellers';
@@ -31,6 +32,7 @@ export default function Home() {
     <>
       <StructuredData data={breadcrumbSchema} />
       <HomeHero />
+      <Welcome />
       <ResearchHighlights />
       <MarketInsights />
       <TrustedSellers />
