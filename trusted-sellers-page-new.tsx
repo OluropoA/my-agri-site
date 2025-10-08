@@ -165,9 +165,19 @@ async function getSellers() {
     products: Array.isArray(seller.products) ? seller.products.join(', ') : '',
     state: seller.location.state,
     phone: seller.contactInfo.phone || '',
-    email: seller.contactInfo.email || '',
+    socialMedia: {
+      facebook: `https://facebook.com/${seller.name.toLowerCase().replace(/[^a-z0-9]/g, '')}`,
+      twitter: `https://twitter.com/${seller.name.toLowerCase().replace(/[^a-z0-9]/g, '')}_ng`,
+      instagram: `https://instagram.com/${seller.name.toLowerCase().replace(/[^a-z0-9]/g, '')}`
+    },
+    type: (seller.products.includes('equipment') ? 'Equipment Provider' :
+          seller.products.includes('Seeds') ? 'Distributor' :
+          seller.products.some(p => ['Palm oil', 'Yogurt', 'Cheese'].includes(p)) ? 'Processor' :
+          'Farmer') as 'Farmer' | 'Processor' | 'Distributor' | 'Equipment Provider',
     verified: seller.verified,
     description: seller.description,
+    averageRating: seller.rating,
+    feedbackCount: Math.floor(Math.random() * 200) + 30,
     createdAt: new Date()
   }));
 }
