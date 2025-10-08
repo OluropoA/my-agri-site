@@ -193,20 +193,8 @@ export default function ResearchPage() {
         />
         
         <div className="grid md:grid-cols-3 gap-8 mb-10">
-          {/* Placeholder for project/collaboration images - to be replaced with actual content */}
-          <div className="rounded-xl overflow-hidden shadow-md h-64 relative border border-brand-green/15 bg-white">
-            <div className="absolute inset-0 flex items-center justify-center bg-brand-green/10 p-6 text-center">
-              <div>
-                <div className="w-20 h-20 bg-brand-green/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-brand-green">Logo</span>
-                </div>
-                <h4 className="font-bold text-brand-green">IUPAC Collaboration</h4>
-                <p className="text-sm text-brand-charcoal/70">Next Generation Program</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="rounded-xl overflow-hidden shadow-md h-64 relative border border-brand-green/15 bg-white">
+          {/* University Research */}
+          <Link href="/research/collaborations/university" className="rounded-xl overflow-hidden shadow-md h-64 relative border border-brand-green/15 bg-white hover:shadow-lg transition-all">
             <div className="absolute inset-0 flex items-center justify-center bg-brand-gold/10 p-6 text-center">
               <div>
                 <div className="w-20 h-20 bg-brand-gold/20 rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -216,9 +204,10 @@ export default function ResearchPage() {
                 <p className="text-sm text-brand-charcoal/70">Nnamdi Azikiwe University</p>
               </div>
             </div>
-          </div>
+          </Link>
           
-          <div className="rounded-xl overflow-hidden shadow-md h-64 relative border border-brand-green/15 bg-white">
+          {/* Climate Smart Initiative */}
+          <Link href="/research/collaborations/climate-change" className="rounded-xl overflow-hidden shadow-md h-64 relative border border-brand-green/15 bg-white hover:shadow-lg transition-all">
             <div className="absolute inset-0 flex items-center justify-center bg-brand-emerald/10 p-6 text-center">
               <div>
                 <div className="w-20 h-20 bg-brand-emerald/20 rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -228,7 +217,20 @@ export default function ResearchPage() {
                 <p className="text-sm text-brand-charcoal/70">Community Outreach Program</p>
               </div>
             </div>
-          </div>
+          </Link>
+          
+          {/* IUPAC Collaboration */}
+          <Link href="/research/collaborations/iupac" className="rounded-xl overflow-hidden shadow-md h-64 relative border border-brand-green/15 bg-white hover:shadow-lg transition-all">
+            <div className="absolute inset-0 flex items-center justify-center bg-brand-green/10 p-6 text-center">
+              <div>
+                <div className="w-20 h-20 bg-brand-green/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <span className="text-brand-green">Logo</span>
+                </div>
+                <h4 className="font-bold text-brand-green">IUPAC Collaboration</h4>
+                <p className="text-sm text-brand-charcoal/70">Next Generation Program</p>
+              </div>
+            </div>
+          </Link>
         </div>
         
         <div className="text-center">
@@ -251,7 +253,7 @@ export default function ResearchPage() {
             <h4 className="font-bold text-brand-charcoal mb-2 font-primary">Efficacy Of Aqueous And Powdered Leaf Extracts Of Chromolaena Odorata And Ficus Mucuso Botanicals On Root-Knot Nematode Infecting Watermelon</h4>
             <p className="text-sm text-brand-charcoal/70 mb-4 font-secondary">Journal of Agricultural and Life Sciences (2023)</p>
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
-              <p className="text-xs text-brand-charcoal/50 font-secondary">Authors: Apalowo, O.R., et al.</p>
+              <p className="text-xs text-brand-charcoal/50 font-secondary">Authors: Apalowo, O. A., et al.</p>
               <a href="https://jurnalalse.iuls.ro/wp-content/uploads/2024/12/ALSE4-2023-04.pdf" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="sm" className="text-brand-green border-brand-green/30 hover:bg-brand-green/5">
                   View Publication
@@ -265,7 +267,7 @@ export default function ResearchPage() {
             <h4 className="font-bold text-brand-charcoal mb-2 font-primary">Genetic Structure of Cucumber Mosaic Virus From Natural Hosts in Nigeria Reveals High Diversity and Occurrence of Putative Novel Recombinant Strains</h4>
             <p className="text-sm text-brand-charcoal/70 mb-4 font-secondary">Frontiers in Microbiology (2022)</p>
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
-              <p className="text-xs text-brand-charcoal/50 font-secondary">Authors: Apalowo, O.R., et al.</p>
+              <p className="text-xs text-brand-charcoal/50 font-secondary">Authors: Apalowo, O. A., et al.</p>
               <a href="https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2022.753054/full" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="sm" className="text-brand-green border-brand-green/30 hover:bg-brand-green/5">
                   View Publication
@@ -279,7 +281,7 @@ export default function ResearchPage() {
             <h4 className="font-bold text-brand-charcoal mb-2 font-primary">Bioactivity Of Aqueous Extract Of Vernonia Amygdalina And Peperomia Pellucida On Meloidogyne Incognita Infecting Two Telfairia Occidentalis Accessions</h4>
             <p className="text-sm text-brand-charcoal/70 mb-4 font-secondary">African Journal of Agricultural and Allied Sciences (2021)</p>
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
-              <p className="text-xs text-brand-charcoal/50 font-secondary">Authors: Apalowo, O.R., et al.</p>
+              <p className="text-xs text-brand-charcoal/50 font-secondary">Authors: Apalowo, O. A., et al.</p>
               <a href="https://www.ajaas.com.ng/vol-1issue1-2021-article-2-bioactivity-of-aqueous-extract-of-vernonia-amygdalina-and-peperomia-pellucida-on-meloidogyne-incognita-infecting-two-telfairia-accessions/" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="sm" className="text-brand-green border-brand-green/30 hover:bg-brand-green/5">
                   View Publication
@@ -293,7 +295,7 @@ export default function ResearchPage() {
             <h4 className="font-bold text-brand-charcoal mb-2 font-primary">Occurrence of parasitic nematodes infecting cucumber in Kwara State, Nigeria</h4>
             <p className="text-sm text-brand-charcoal/70 mb-4 font-secondary">Agriculture, Food, and Natural Resources Journal (2022)</p>
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
-              <p className="text-xs text-brand-charcoal/50 font-secondary">Authors: Apalowo, O.R., et al.</p>
+              <p className="text-xs text-brand-charcoal/50 font-secondary">Authors: Apalowo, O. A., et al.</p>
               <a href="https://journals.unizik.edu.ng/afnrj/article/view/5054" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="sm" className="text-brand-green border-brand-green/30 hover:bg-brand-green/5">
                   View Publication
