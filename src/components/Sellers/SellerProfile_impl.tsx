@@ -152,16 +152,7 @@ const SellerProfile: React.FC<SellerProfileProps> = ({ seller }) => {
                   </a>
                 </Button>
                 
-                <Button
-                  variant="outline"
-                  className="w-full border-brand-green text-brand-green hover:bg-brand-green/5 font-primary"
-                  asChild
-                >
-                  <a href={`mailto:${seller.email}`}>
-                    <Mail className="h-4 w-4 mr-2" />
-                    Send Email
-                  </a>
-                </Button>
+
               </div>
             </div>
             
