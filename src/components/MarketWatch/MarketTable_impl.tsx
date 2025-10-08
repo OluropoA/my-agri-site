@@ -231,7 +231,7 @@ const MarketTable: React.FC<MarketTableProps> = ({
             </button>
             
             {filterMenuOpen.state && (
-              <div className="absolute right-0 mt-1 z-10 w-48 bg-white border rounded-md shadow-lg">
+              <div className="absolute left-0 md:right-0 md:left-auto mt-1 z-10 w-48 bg-white border rounded-md shadow-lg">
                 <div className="py-1 max-h-60 overflow-auto">
                   <button
                     onClick={() => applyFilter('state', 'all')}
@@ -268,7 +268,7 @@ const MarketTable: React.FC<MarketTableProps> = ({
             </button>
             
             {filterMenuOpen.market && (
-              <div className="absolute right-0 mt-1 z-10 w-48 bg-white border rounded-md shadow-lg">
+              <div className="absolute left-0 md:right-0 md:left-auto mt-1 z-10 w-48 bg-white border rounded-md shadow-lg">
                 <div className="py-1 max-h-60 overflow-auto">
                   <button
                     onClick={() => applyFilter('market', 'all')}
@@ -305,7 +305,7 @@ const MarketTable: React.FC<MarketTableProps> = ({
             </button>
             
             {filterMenuOpen.commodity && (
-              <div className="absolute right-0 mt-1 z-10 w-48 bg-white border rounded-md shadow-lg">
+              <div className="absolute left-0 md:right-0 md:left-auto mt-1 z-10 w-48 bg-white border rounded-md shadow-lg">
                 <div className="py-1 max-h-60 overflow-auto">
                   <button
                     onClick={() => applyFilter('commodity', 'all')}
