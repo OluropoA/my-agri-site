@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import { GraduationCap, Award, Users, Globe, ChevronRight } from 'lucide-react'
 import Image from 'next/image';
 import { PageHero, Section, SectionHeading } from '@/components/Layout/Layout';
 import StructuredData from '@/components/SEO/StructuredData';
@@ -29,45 +28,6 @@ export default function AboutPage() {
   ]);
 
   const personSchema = generatePersonSchema();
-
-  const achievements = [
-    {
-      icon: <GraduationCap className="w-6 h-6" />,
-      title: "Ph.D. Crop Protection",
-      description: "University of Ilorin, 2023",
-      color: "bg-brand-green/10 text-brand-green"
-    },
-    {
-      icon: <Award className="w-6 h-6" />,
-      title: "IUPAC N-GAGE Champion",
-      description: "Youth Innovation Award, 2019",
-      color: "bg-brand-gold/10 text-brand-gold"
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "Academic Staff",
-      description: "Nnamdi Azikiwe University",
-      color: "bg-brand-emerald/10 text-brand-emerald"
-    },
-    {
-      icon: <Globe className="w-6 h-6" />,
-      title: "International Researcher",
-      description: "IITA, Belgium Training",
-      color: "bg-brand-brown/10 text-brand-brown"
-    }
-  ]
-
-  const expertise = [
-    "Crop Protection & Plant Pathology",
-    "Nematology & Root-Knot Nematode Management",
-    "Plant Virology & Virus Identification",
-    "Sustainable Agriculture Practices",
-    "Botanical Pest Control Methods",
-    "Climate Change Adaptation",
-    "AI Applications in Agriculture",
-    "Integrated Pest Management"
-  ]
-
   return (
     <div className="min-h-screen">
       <StructuredData data={[breadcrumbSchema, personSchema]} />
@@ -133,49 +93,11 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Expertise Areas */}
-            <div>
-              <h4 className="text-lg font-semibold text-brand-charcoal mb-4 font-primary mt-16">Areas of Expertise</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {expertise.map((area, index) => (
-                  <div key={index} className="flex items-center space-x-3 py-1.5">
-                    <div className="w-2 h-2 bg-brand-green rounded-full flex-shrink-0"></div>
-                    <span className="text-brand-charcoal/80 font-secondary">{area}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Education Timeline */}
-            <div className="space-y-6 pt-16">
-              <h4 className="text-lg font-semibold text-brand-charcoal font-primary">Education</h4>
-              
-              <div className="space-y-6">
-                <div className="border-l-2 border-brand-green pl-4 pb-6">
-                  <div className="text-sm text-brand-gold font-medium font-primary">2023</div>
-                  <div className="font-semibold text-brand-charcoal font-primary">Ph.D. Crop Protection</div>
-                  <div className="text-brand-charcoal/70 font-secondary">University of Ilorin, Kwara State</div>
-                </div>
-                
-                <div className="border-l-2 border-brand-green pl-4 pb-6">
-                  <div className="text-sm text-brand-gold font-medium font-primary">2016</div>
-                  <div className="font-semibold text-brand-charcoal font-primary">M.Sc. Crop Protection</div>
-                  <div className="text-brand-charcoal/70 font-secondary">University of Ilorin, Kwara State</div>
-                </div>
-                
-                <div className="border-l-2 border-brand-green pl-4 pb-6">
-                  <div className="text-sm text-brand-gold font-medium font-primary">2011</div>
-                  <div className="font-semibold text-brand-charcoal font-primary">B.Tech (Hons.) Agronomy</div>
-                  <div className="text-brand-charcoal/70 font-secondary">Ladoke Akintola University of Technology</div>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Achievements & Photo */}
-          <div className="max-w-3xl mx-auto space-y-8">
-            {/* Photo - Only visible on desktop */}
-            <div className="hidden lg:block relative aspect-[3/4] lg:h-[660px] rounded-xl overflow-hidden shadow-md border border-brand-brown/20 mb-16">
+          {/* Photo - Only visible on desktop */}
+          <div className="max-w-3xl mx-auto">
+            <div className="hidden lg:block relative aspect-[3/4] lg:h-[660px] rounded-xl overflow-hidden shadow-md border border-brand-brown/20">
               <Image
                 src="/images/dr-apalowo-hero.jpg"
                 alt="Dr. Oluropo Apalowo, an agricultural scientist, smiling in a red turtleneck and checkered blazer"
@@ -185,68 +107,48 @@ export default function AboutPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-green/80 to-transparent"></div>
             </div>
-            <SectionHeading title="Key Achievements" />
-            
-            <div className="grid gap-6">
-              {achievements.map((achievement, index) => (
-                <div key={index} className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-sm border border-brand-brown/10 hover:shadow-md transition-all hover:border-brand-brown/20">
-                  <div className={`p-3 rounded-lg ${achievement.color}`}>
-                    {achievement.icon}
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-brand-charcoal mb-1 font-primary">{achievement.title}</h4>
-                    <p className="text-brand-charcoal/70 font-secondary">{achievement.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
 
           </div>
         </div>
       </Section>
-      
-      {/* Research Philosophy Section */}
+
+      {/* My Approach Section */}
       <Section bgColor="light">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative h-96 overflow-hidden rounded-xl shadow-md border border-brand-brown/20">
-            <Image 
-              src="/images/research-field.jpg" 
-              alt="Dr. Apalowo conducting field research"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-brand-emerald/30"></div>
-          </div>
-          <div>
-            <SectionHeading 
-              title="My Approach to Agricultural Science" 
-              subtitle="Making research work for real people"
-            />
-            <div className="space-y-4 text-brand-charcoal/80 font-secondary">
-              <p>
-                I believe that science should work for everyone, not just other scientists. That&apos;s why my approach focuses on creating solutions that farmers can actually use in their fields, not just ideas that look good on paper.
-              </p>
-              <p>
-                Growing up in Nigeria, I&apos;ve seen firsthand how agricultural challenges impact communities. My work combines rigorous science with practical know-how, making sure that what works in the lab can also work for a smallholder farmer with limited resources.
-              </p>
-              <div className="pt-4">
-                <ul className="space-y-3">
-                  {[
-                    "Research you can use, not just read about", 
-                    "Bringing farmers and scientists together", 
-                    "Solutions that work for people and the planet"
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center">
-                      <ChevronRight className="h-5 w-5 text-brand-gold mr-2 flex-shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+        <div className="max-w-4xl mx-auto">
+          <SectionHeading 
+            title="My Approach to Agricultural Science" 
+            subtitle="Bridging research and practical solutions"
+            centered
+          />
+          
+          <div className="prose prose-lg mx-auto text-brand-charcoal/80 font-secondary">
+            <p>
+              My approach to agricultural science is deeply rooted in the belief that effective solutions must be both 
+              scientifically sound and practically applicable. I focus on developing sustainable solutions that are:
+            </p>
+
+            <ul className="list-none space-y-4 pl-0">
+              <li className="flex items-start">
+                <span className="w-2 h-2 bg-brand-green rounded-full mt-2.5 mr-3 flex-shrink-0"></span>
+                <span>Accessible to farmers regardless of their resources or technical background</span>
+              </li>
+              <li className="flex items-start">
+                <span className="w-2 h-2 bg-brand-green rounded-full mt-2.5 mr-3 flex-shrink-0"></span>
+                <span>Environmentally sustainable and climate-conscious</span>
+              </li>
+              <li className="flex items-start">
+                <span className="w-2 h-2 bg-brand-green rounded-full mt-2.5 mr-3 flex-shrink-0"></span>
+                <span>Based on rigorous research but explained in simple terms</span>
+              </li>
+              <li className="flex items-start">
+                <span className="w-2 h-2 bg-brand-green rounded-full mt-2.5 mr-3 flex-shrink-0"></span>
+                <span>Integrated with local farming practices and knowledge</span>
+              </li>
+            </ul>
           </div>
         </div>
       </Section>
+      
     </div>
   )
 }
