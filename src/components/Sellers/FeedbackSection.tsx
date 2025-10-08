@@ -16,7 +16,7 @@ export default function FeedbackSection({ sellerId: _sellerId, currentRating, to
     try {
       setIsSubmitting(true);
       // TODO: Implement API call to submit feedback
-      console.log('Submitting feedback:', { sellerId, rating, comment });
+      console.log('Submitting feedback:', { sellerId: _sellerId, rating, comment });
       await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
     } finally {
       setIsSubmitting(false);
