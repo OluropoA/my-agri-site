@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Check, MapPin, Phone, Mail, Calendar, Share2, ArrowLeft } from 'lucide-react';
+import { Check, MapPin, Phone, Calendar, Share2, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Seller } from './SellerList_impl';
@@ -123,17 +123,7 @@ const SellerProfile: React.FC<SellerProfileProps> = ({ seller }) => {
                   </div>
                 </div>
                 
-                <div className="flex items-start">
-                  <div className="p-2 bg-brand-green/10 rounded-full mr-3">
-                    <Mail className="h-4 w-4 text-brand-green" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-brand-charcoal/60 font-secondary">Email</div>
-                    <a href={`mailto:${seller.email}`} className="text-brand-charcoal hover:text-brand-green font-secondary">
-                      {seller.email}
-                    </a>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
