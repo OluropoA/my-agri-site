@@ -172,10 +172,10 @@ async function getSellers() {
       twitter: `https://twitter.com/${seller.name.toLowerCase().replace(/[^a-z0-9]/g, '')}_ng`,
       instagram: `https://instagram.com/${seller.name.toLowerCase().replace(/[^a-z0-9]/g, '')}`
     },
-    type: seller.products.includes('equipment') ? 'Equipment Provider' :
+    type: (seller.products.includes('equipment') ? 'Equipment Provider' :
           seller.products.includes('Seeds') ? 'Distributor' :
           seller.products.some(p => ['Palm oil', 'Yogurt', 'Cheese'].includes(p)) ? 'Processor' :
-          'Farmer',
+          'Farmer') as 'Farmer' | 'Processor' | 'Distributor' | 'Equipment Provider',
     verified: seller.verified,
     description: seller.description,
     averageRating: seller.rating,
