@@ -13,6 +13,24 @@ export const metadata: Metadata = {
 async function getBlogPosts(): Promise<BlogPost[]> {
   return [
     {
+      id: '4',
+      title: 'Field Notes: A Week in Anambra State',
+      excerpt: 'Personal reflections and observations from my recent field visits to farming communities in Anambra.',
+      content: '<p>This week, I had the privilege of visiting several farming communities in Anambra State. The experience was both enlightening and humbling as I witnessed firsthand the challenges and innovations of local farmers.</p><p>Through these visits, I&apos;ve gained valuable insights into traditional farming methods and how they can be enhanced with modern techniques.</p>',
+      slug: 'field-notes-anambra',
+      category: 'Diary',
+      tags: 'diary, field visit, local farmers, community engagement',
+      authorId: '1',
+      author: {
+        name: 'Dr. Oluropo Apalowo',
+        email: 'oluropo.apalowo@unizik.edu.ng'
+      },
+      createdAt: new Date('2025-10-01'),
+      updatedAt: new Date('2025-10-01'),
+      published: true,
+      coverImage: 'https://images.unsplash.com/photo-1589923188643-92088c717cdd'
+    },
+    {
       id: '1',
       title: 'Sustainable Farming Practices in Nigeria',
       excerpt: 'Exploring eco-friendly farming methods that boost productivity while preserving the environment.',
@@ -71,7 +89,7 @@ async function getBlogPosts(): Promise<BlogPost[]> {
 
 // Get blog categories
 async function getBlogCategories(): Promise<string[]> {
-  return ['All', 'Sustainability', 'Climate Change', 'Technology', 'Research', 'Education'];
+  return ['All', 'Diary', 'Sustainability', 'Climate Change', 'Technology', 'Research', 'Education'];
 }
 
 export default async function BlogPage() {
