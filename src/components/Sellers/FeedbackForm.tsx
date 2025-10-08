@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { Star } from 'lucide-react';
 
 interface FeedbackFormProps {
-  sellerId: string;
   currentRating?: number;
   totalFeedback?: number;
   onSubmit: (rating: number, comment: string) => Promise<void>;
@@ -33,7 +32,7 @@ export default function FeedbackForm({ sellerId, currentRating, totalFeedback, o
       setSuccess(true);
       setComment('');
       setRating(0);
-    } catch (err) {
+    } catch (_) {
       setError('Failed to submit feedback. Please try again.');
     } finally {
       setIsSubmitting(false);

@@ -11,8 +11,7 @@ import {
   CalendarDays,
   Facebook,
   Twitter,
-  Instagram,
-  Star
+  Instagram
 } from 'lucide-react';
 import { PageHero, Section } from '@/components/Layout/Layout';
 import FeedbackSection from '@/components/Sellers/FeedbackSection';
@@ -381,10 +380,10 @@ export default async function SellerDetailPage({ params }: { params: { id: strin
                   </div>
                   
                   {/* Rating */}
-                  {seller.rating && (
+                  {seller.averageRating && (
                     <div className="mb-4">
                       <h2 className="text-sm font-medium text-brand-charcoal/60 uppercase tracking-wider mb-1 font-primary">Rating</h2>
-                      <StarRating rating={seller.rating} />
+                      <StarRating rating={seller.averageRating} />
                     </div>
                   )}
                 </div>

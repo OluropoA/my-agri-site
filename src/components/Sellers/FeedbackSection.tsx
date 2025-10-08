@@ -9,8 +9,8 @@ interface FeedbackSectionProps {
   totalFeedback?: number;
 }
 
-export default function FeedbackSection({ sellerId, currentRating, totalFeedback }: FeedbackSectionProps) {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+export default function FeedbackSection({ sellerId: _sellerId, currentRating, totalFeedback }: FeedbackSectionProps) {
+  const [_, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (rating: number, comment: string) => {
     try {
