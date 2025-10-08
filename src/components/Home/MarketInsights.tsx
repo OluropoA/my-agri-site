@@ -5,35 +5,35 @@ import { Button } from '@/components/ui/button';
 export default function MarketInsights() {
   const marketData = [
     {
-      commodity: "Rice (Local)",
-      location: "Lagos Market",
-      price: "₦45,000",
-      unit: "per bag (50kg)",
-      change: 7.14,
+      commodity: "Palm Oil",
+      location: "Onitsha Market",
+      price: "₦65,000",
+      unit: "per 25L",
+      change: 3.14,
       trend: "up"
     },
     {
-      commodity: "Yam Tubers",
-      location: "Onitsha Market", 
-      price: "₦8,500",
-      unit: "per tuber",
-      change: -5.56,
+      commodity: "Cassava Flour",
+      location: "Ibadan Market", 
+      price: "₦18,500",
+      unit: "per bag",
+      change: -2.56,
       trend: "down"
     },
     {
-      commodity: "Tomatoes",
-      location: "Kano Market",
-      price: "₦15,000", 
-      unit: "per basket",
+      commodity: "Plantain",
+      location: "Lagos Market",
+      price: "₦12,000", 
+      unit: "per bunch",
       change: 0,
       trend: "stable"
     },
     {
-      commodity: "Maize (Dry)",
-      location: "Kaduna Market",
-      price: "₦35,000",
-      unit: "per bag (100kg)",
-      change: 6.06,
+      commodity: "Soybean",
+      location: "Kano Market",
+      price: "₦42,000",
+      unit: "per bag",
+      change: 4.06,
       trend: "up"
     }
   ];
@@ -108,8 +108,8 @@ export default function MarketInsights() {
         </div>
 
         <div className="text-center">
-          <Button asChild size="lg" className="bg-brand-green hover:bg-brand-green/90 text-white">
-            <Link href="/market-watch">
+          <Button asChild size="lg" className="bg-brand-green hover:bg-brand-green/90 !text-white font-semibold">
+            <Link href="/market-watch" className="!text-white hover:!text-white">
               View Full Market Data
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
