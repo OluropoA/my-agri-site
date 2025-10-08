@@ -3,7 +3,6 @@ import HomeHero from '@/components/Home/HomeHero';
 import Welcome from '@/components/Home/Welcome';
 import ResearchHighlights from '@/components/Home/ResearchHighlights';
 import MarketInsights from '@/components/Home/MarketInsights';
-import TrustedSellers from '@/components/Home/TrustedSellers';
 import StructuredData from '@/components/SEO/StructuredData';
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo';
 
@@ -35,7 +34,6 @@ export default function Home() {
       <Welcome />
       <ResearchHighlights />
       <MarketInsights />
-      <TrustedSellers />
     </>
   );
 }
