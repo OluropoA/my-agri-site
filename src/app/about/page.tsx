@@ -108,37 +108,50 @@ export default function AboutPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-brand-green/80 to-transparent"></div>
             </div>
 
+            
+            {/* Education Section */}
+            <div className="mt-16">
+              <SectionHeading 
+                title="Education" 
+                subtitle="Academic Background"
+                align="left"
+              />
+              
+              <div className="space-y-6 mt-8">
+                <div className="border-l-2 border-brand-green pl-4 pb-6">
+                  <div className="text-sm text-brand-gold font-medium font-primary">2023</div>
+                  <div className="font-semibold text-brand-charcoal font-primary">Ph.D. Crop Protection</div>
+                  <div className="text-brand-charcoal/70 font-secondary">University of Ilorin, Kwara State</div>
+                </div>
+                
+                <div className="border-l-2 border-brand-green pl-4 pb-6">
+                  <div className="text-sm text-brand-gold font-medium font-primary">2016</div>
+                  <div className="font-semibold text-brand-charcoal font-primary">M.Sc. Crop Protection</div>
+                  <div className="text-brand-charcoal/70 font-secondary">University of Ilorin, Kwara State</div>
+                </div>
+                
+                <div className="border-l-2 border-brand-green pl-4 pb-6">
+                  <div className="text-sm text-brand-gold font-medium font-primary">2011</div>
+                  <div className="font-semibold text-brand-charcoal font-primary">B.Tech (Hons.) Agronomy</div>
+                  <div className="text-brand-charcoal/70 font-secondary">Ladoke Akintola University of Technology</div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </Section>
 
-      {/* Education Section */}
-      <Section bgColor="light">
-        <div className="max-w-4xl mx-auto">
-          <SectionHeading 
-            title="Education" 
-            subtitle="Academic Background"
-            align="center"
-          />
-          
-          <div className="space-y-6 max-w-2xl mx-auto">
-            <div className="border-l-2 border-brand-green pl-4 pb-6">
-              <div className="text-sm text-brand-gold font-medium font-primary">2023</div>
-              <div className="font-semibold text-brand-charcoal font-primary">Ph.D. Crop Protection</div>
-              <div className="text-brand-charcoal/70 font-secondary">University of Ilorin, Kwara State</div>
+          {/* Photo - Only visible on desktop */}
+          <div className="max-w-3xl mx-auto">
+            <div className="hidden lg:block relative aspect-[3/4] lg:h-[660px] rounded-xl overflow-hidden shadow-md border border-brand-brown/20">
+              <Image
+                src="/images/dr-apalowo-hero.jpg"
+                alt="Dr. Oluropo Apalowo, an agricultural scientist, smiling in a red turtleneck and checkered blazer"
+                fill
+                className="object-cover object-top"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-green/80 to-transparent"></div>
             </div>
-            
-            <div className="border-l-2 border-brand-green pl-4 pb-6">
-              <div className="text-sm text-brand-gold font-medium font-primary">2016</div>
-              <div className="font-semibold text-brand-charcoal font-primary">M.Sc. Crop Protection</div>
-              <div className="text-brand-charcoal/70 font-secondary">University of Ilorin, Kwara State</div>
-            </div>
-            
-            <div className="border-l-2 border-brand-green pl-4 pb-6">
-              <div className="text-sm text-brand-gold font-medium font-primary">2011</div>
-              <div className="font-semibold text-brand-charcoal font-primary">B.Tech (Hons.) Agronomy</div>
-              <div className="text-brand-charcoal/70 font-secondary">Ladoke Akintola University of Technology</div>
-            </div>
+
           </div>
         </div>
       </Section>
