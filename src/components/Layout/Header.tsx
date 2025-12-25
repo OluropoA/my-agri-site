@@ -199,7 +199,7 @@ export default function Header() {
                     </div>
                   ) : (
                     <p className="text-xs text-center text-gray-400">
-                      © {new Date().getFullYear()} Dr. 'Ropo Apalowo
+                      © {new Date().getFullYear()} Dr. &apos;Ropo Apalowo
                     </p>
                   )}
                 </div>

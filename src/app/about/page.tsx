@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
-import { GraduationCap, Clock, BookOpen, Award, Sprout, Users, Leaf, Layers, ArrowRight } from 'lucide-react';
+import { GraduationCap, BookOpen, Users, Leaf, Layers, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageHero, Section, SectionHeading } from '@/components/Layout/Layout';
 import StructuredData from '@/components/SEO/StructuredData';

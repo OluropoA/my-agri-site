@@ -84,7 +84,7 @@ export default function BlogEditor({ postId, initialData }: BlogEditorProps) {
                 throw new Error(error.error || error.message || 'Failed to save post');
             }
 
-            const savedPost = await response.json();
+            await response.json(); // Post saved successfully
 
             // Redirect to blog admin page
             router.push('/admin/blog');

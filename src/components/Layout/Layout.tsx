@@ -3,7 +3,7 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import { FadeIn, SlideUp } from '@/components/Effects/MotionWrapper';
+import { SlideUp, StaggerContainer, StaggerItem } from '@/components/Effects/MotionWrapper';
 
 interface LayoutProps {
   children: React.ReactNode;

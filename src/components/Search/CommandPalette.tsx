@@ -3,7 +3,7 @@
 import * as React from "react"
 import { useRouter } from "next/navigation"
 import { Command } from "cmdk"
-import { Search, Calculator, Calendar, CreditCard, Settings, User, FileText, Home, LineChart, FlaskConical } from "lucide-react"
+import { Search, FileText, Home, LineChart, FlaskConical, Settings, User } from "lucide-react"
 
 export function CommandPalette() {
     const [open, setOpen] = React.useState(false)
