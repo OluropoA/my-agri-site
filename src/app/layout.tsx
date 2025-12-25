@@ -10,7 +10,7 @@ import StructuredData from "@/components/SEO/StructuredData";
 import { generateMetadata, generatePersonSchema, generateOrganizationSchema } from "@/lib/seo";
 
 // Brand Fonts
-const montserrat = Montserrat({ 
+const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-primary",
@@ -54,21 +54,21 @@ export default function RootLayout({
   const organizationSchema = generateOrganizationSchema();
 
   return (
-    <html lang="en-NG" className={`${montserrat.variable} ${openSans.variable} ${playfairDisplay.variable}`}>
+    <html lang="en-NG" className={`${montserrat.variable} ${openSans.variable} ${playfairDisplay.variable}`} suppressHydrationWarning>
       <head>
         {/* Structured Data */}
         <StructuredData data={[personSchema, organizationSchema]} />
-        
+
         {/* Favicons and App Icons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-        
+
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
+
         {/* DNS Prefetch for performance */}
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
       </head>

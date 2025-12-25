@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -10,13 +11,13 @@ module.exports = {
         'brand-green': '#2D5016', // Primary Brand Color
         'brand-gold': '#DAA520', // Secondary Brand Color
         'brand-brown': '#8B4513', // Supporting Color
-        
+
         // Extended Color Palette
         'brand-emerald': '#006A4E', // Professional documents
         'brand-ivory': '#F5F5DC', // Soft backgrounds
         'brand-charcoal': '#36454F', // Body text and subtle elements
         'brand-sage': '#87A96B', // Secondary graphics
-        
+
         // Social Media Colors
         'facebook': '#1877F2',
         'twitter': '#1DA1F2',

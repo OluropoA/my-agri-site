@@ -3,6 +3,7 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import { FadeIn, SlideUp } from '@/components/Effects/MotionWrapper';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -17,13 +18,13 @@ export default function Layout({ children, containerClass = "py-12" }: LayoutPro
   return (
     <div className="flex flex-col min-h-screen font-secondary">
       <Header />
-      
+
       <main className={`flex-grow ${containerClass}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {children}
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );
@@ -32,15 +33,15 @@ export default function Layout({ children, containerClass = "py-12" }: LayoutPro
 /**
  * Page Hero Component with brand styling
  */
-export function PageHero({ 
-  title, 
+export function PageHero({
+  title,
   subtitle = "",
   backgroundImage = "",
   align = "center",
   size = "default"
-}: { 
-  title: string; 
-  subtitle?: string; 
+}: {
+  title: string;
+  subtitle?: string;
   backgroundImage?: string;
   align?: "left" | "center" | "right";
   size?: "small" | "default" | "large";
@@ -64,23 +65,27 @@ export function PageHero({
   };
 
   return (
-    <div 
+    <div
       className={`w-full ${sizeClasses[size]} relative overflow-hidden`}
       style={backgroundImage ? {
         backgroundImage: `linear-gradient(rgba(45, 80, 22, 0.85), rgba(0, 106, 78, 0.85)), url(${backgroundImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-      } : {backgroundColor: '#F5F5DC'}}
+      } : { backgroundColor: '#F5F5DC' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`${alignmentClasses[align]} ${maxWidthClasses[align]}`}>
-          <h1 className={`font-primary font-bold ${backgroundImage ? 'text-white' : 'text-brand-charcoal'} ${size === 'large' ? 'text-4xl md:text-5xl' : 'text-3xl md:text-4xl'} mb-4`}>
-            {title}
-          </h1>
+          <SlideUp>
+            <h1 className={`font-primary font-bold ${backgroundImage ? 'text-white' : 'text-brand-charcoal'} ${size === 'large' ? 'text-4xl md:text-5xl' : 'text-3xl md:text-4xl'} mb-4`}>
+              {title}
+            </h1>
+          </SlideUp>
           {subtitle && (
-            <p className={`${backgroundImage ? 'text-white/80' : 'text-brand-charcoal/70'} text-xl max-w-3xl ${align === 'center' ? 'mx-auto' : ''}`}>
-              {subtitle}
-            </p>
+            <SlideUp delay={0.2}>
+              <p className={`${backgroundImage ? 'text-white/80' : 'text-brand-charcoal/70'} text-xl max-w-3xl ${align === 'center' ? 'mx-auto' : ''}`}>
+                {subtitle}
+              </p>
+            </SlideUp>
           )}
         </div>
       </div>
@@ -122,9 +127,9 @@ export function Section({
 /**
  * Card Component with brand styling
  */
-export function BrandCard({ 
-  children, 
-  className = "" 
+export function BrandCard({
+  children,
+  className = ""
 }: {
   children: React.ReactNode;
   className?: string;
@@ -139,9 +144,9 @@ export function BrandCard({
 /**
  * Heading Components with brand styling
  */
-export function SectionHeading({ 
-  title, 
-  subtitle = "", 
+export function SectionHeading({
+  title,
+  subtitle = "",
   align = "left",
   className = ""
 }: {

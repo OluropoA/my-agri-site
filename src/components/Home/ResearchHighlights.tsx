@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { ArrowRight, Microscope, Leaf, Globe } from 'lucide-react';
+import { ArrowRight, Microscope, Leaf } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { StaggerContainer, StaggerItem, SlideUp } from '@/components/Effects/MotionWrapper';
 
 export default function ResearchHighlights() {
   const researchAreas = [
@@ -17,13 +18,6 @@ export default function ResearchHighlights() {
       description: "Exploring critical areas in sustainable agriculture and crop protection.",
       color: "bg-green-100 text-green-600",
       link: "/research"
-    },
-    {
-      icon: <Globe className="h-8 w-8" />,
-      title: "Market Watch",
-      description: "Stay informed with real-time agricultural commodity prices and market trends.",
-      color: "bg-amber-100 text-amber-600",
-      link: "/market-watch"
     }
   ];
 
@@ -34,37 +28,42 @@ export default function ResearchHighlights() {
           <h2 className="text-3xl font-bold text-brand-charcoal font-primary mb-4">
             Research Focus Areas
           </h2>
-          <p className="text-xl text-brand-charcoal/70 font-secondary max-w-2xl mx-auto">
-            Exploring critical areas at the intersection of crop protection and sustainable agriculture
-          </p>
+          <SlideUp>
+            <p className="text-xl text-brand-charcoal/70 font-secondary max-w-2xl mx-auto">
+              Exploring critical areas at the intersection of crop protection and sustainable agriculture
+            </p>
+          </SlideUp>
         </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        {/* Mobile: Horizontal Scroll Snap | Desktop: Grid */}
+        <StaggerContainer className="flex overflow-x-auto snap-x snap-mandatory pb-6 -mx-4 px-4 gap-4 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8 md:overflow-visible md:pb-0 md:mx-0 md:px-0 scrollbar-hide">
           {researchAreas.map((area, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow border border-gray-100">
+            <StaggerItem key={index} className="min-w-[280px] w-[85vw] md:w-auto snap-center bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow border border-gray-100 h-full flex flex-col">
               <div className={`p-4 ${area.color} text-center`}>
                 <div className="flex justify-center">
                   {area.icon}
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-brand-charcoal font-primary mb-3">
-                  {area.title}
-                </h3>
-                <p className="text-brand-charcoal/70 font-secondary mb-4 text-sm leading-relaxed">
-                  {area.description}
-                </p>
-                <Link 
+              <div className="p-6 flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-bold text-brand-charcoal font-primary mb-3">
+                    {area.title}
+                  </h3>
+                  <p className="text-brand-charcoal/70 font-secondary mb-4 text-sm leading-relaxed">
+                    {area.description}
+                  </p>
+                </div>
+                <Link
                   href={area.link}
-                  className="inline-flex items-center text-brand-green font-medium hover:text-brand-emerald font-primary text-sm"
+                  className="inline-flex items-center text-brand-green font-medium hover:text-brand-emerald font-primary text-sm mt-auto"
                 >
                   Learn more
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         <div className="text-center mt-12">
           <Button asChild variant="outline" size="lg">

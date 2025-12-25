@@ -1,7 +1,8 @@
 "use client";
 
-import { Leaf, Mail, Phone, MapPin, Linkedin, Twitter, Globe, ArrowUp } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+// import Link from 'next/link';
+import { Mail, MapPin, Linkedin, Twitter, Leaf, Globe, ArrowUp } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import '@/styles/footer.css'
 
 const Footer = () => {
@@ -41,22 +42,19 @@ const Footer = () => {
                 <p className="text-white text-sm font-secondary">Agricultural Scientist</p>
               </div>
             </div>
-            
+
             <p className="text-white leading-relaxed max-w-md font-secondary">
-              Advancing agricultural science through innovative research in crop protection, 
+              Advancing agricultural science through innovative research in crop protection,
               sustainable farming practices, and AI-driven solutions for global food security.
             </p>
-            
+
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-sm text-white">
                 <Mail className="w-4 h-4 text-brand-gold" />
-                <span>oluropo.apalowo@unizik.edu.ng</span>
+                <span>contact@ropoapalowo.com</span>
               </div>
-              <div className="flex items-center space-x-3 text-sm text-white">
-                <Phone className="w-4 h-4 text-brand-gold" />
-                <span>+234 806 214 2261</span>
-              </div>
+
               <div className="flex items-center space-x-3 text-sm text-white">
                 <MapPin className="w-4 h-4 text-brand-gold" />
                 <span>Nnamdi Azikiwe University, Awka</span>
@@ -83,7 +81,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
+                  <a
                     href={link.href}
                     className="text-white hover:text-brand-gold transition-colors duration-200 text-sm font-secondary"
                   >
@@ -100,7 +98,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {researchAreas.map((area, index) => (
                 <li key={index}>
-                  <a 
+                  <a
                     href={area.href}
                     className="text-white hover:text-brand-gold transition-colors duration-200 text-sm font-secondary"
                   >
@@ -121,7 +119,7 @@ const Footer = () => {
                 Subscribe to receive updates on latest research, publications, and insights.
               </p>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-3">
               <input
                 type="email"
@@ -140,7 +138,7 @@ const Footer = () => {
           <div className="text-sm text-white mb-4 md:mb-0 font-secondary">
             © 2025 Dr. Oluropo Apalowo. All rights reserved.
           </div>
-          
+
           <div className="flex items-center space-x-6">
             <a href="#" className="text-sm text-white hover:text-brand-gold transition-colors duration-200 font-secondary">
               Privacy Policy

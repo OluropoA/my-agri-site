@@ -3,13 +3,13 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { 
-  Plus, 
-  Search, 
-  FileText, 
-  Eye, 
-  Edit, 
-  Trash2, 
+import {
+  Plus,
+  Search,
+  FileText,
+  Eye,
+  Edit,
+  Trash2,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
@@ -87,16 +87,16 @@ export default function BlogAdminPage() {
 
   // Get unique categories
   const categories = ['All', ...Array.from(new Set(mockPosts.map(post => post.category)))];
-  
+
   // Filter posts
   const filteredPosts = mockPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
-    const matchesStatus = selectedStatus === 'All' || 
-                         (selectedStatus === 'Published' && post.published) ||
-                         (selectedStatus === 'Draft' && !post.published);
-    
+    const matchesStatus = selectedStatus === 'All' ||
+      (selectedStatus === 'Published' && post.published) ||
+      (selectedStatus === 'Draft' && !post.published);
+
     return matchesSearch && matchesCategory && matchesStatus;
   });
 
@@ -106,10 +106,10 @@ export default function BlogAdminPage() {
   const paginatedPosts = filteredPosts.slice(startIndex, startIndex + postsPerPage);
 
   const formatDate = (date: Date) => {
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'short', 
-      day: 'numeric' 
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
     });
   };
 
@@ -122,7 +122,7 @@ export default function BlogAdminPage() {
             <h1 className="text-2xl font-bold text-gray-900 mb-2">Blog Posts</h1>
             <p className="text-gray-600">Manage your blog posts and articles</p>
           </div>
-          <Button asChild className="bg-brand-green hover:bg-brand-green/90 text-white">
+          <Button asChild className="bg-brand-green hover:bg-brand-green/90 !text-white">
             <Link href="/admin/blog/new">
               <Plus className="mr-2 h-4 w-4" />
               New Post
@@ -143,7 +143,7 @@ export default function BlogAdminPage() {
               </div>
             </div>
           </div>
-          
+
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
             <div className="flex items-center">
               <div className="p-2 bg-green-100 rounded-lg mr-3">
@@ -157,7 +157,7 @@ export default function BlogAdminPage() {
               </div>
             </div>
           </div>
-          
+
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
             <div className="flex items-center">
               <div className="p-2 bg-yellow-100 rounded-lg mr-3">
@@ -171,7 +171,7 @@ export default function BlogAdminPage() {
               </div>
             </div>
           </div>
-          
+
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
             <div className="flex items-center">
               <div className="p-2 bg-purple-100 rounded-lg mr-3">
@@ -201,7 +201,7 @@ export default function BlogAdminPage() {
                 className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent"
               />
             </div>
-            
+
             {/* Category Filter */}
             <div className="relative">
               <select
@@ -215,7 +215,7 @@ export default function BlogAdminPage() {
               </select>
               <ChevronDown className="absolute right-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
             </div>
-            
+
             {/* Status Filter */}
             <div className="relative">
               <select
@@ -288,11 +288,10 @@ export default function BlogAdminPage() {
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                        post.published 
-                          ? 'bg-green-100 text-green-800' 
+                      <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${post.published
+                          ? 'bg-green-100 text-green-800'
                           : 'bg-yellow-100 text-yellow-800'
-                      }`}>
+                        }`}>
                         {post.published ? 'Published' : 'Draft'}
                       </span>
                     </td>

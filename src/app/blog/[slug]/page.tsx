@@ -75,16 +75,16 @@ async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 async function getRelatedPosts(currentPost: BlogPost): Promise<BlogPost[]> {
   const posts = await getPosts();
   return posts
-    .filter(post => 
-      post.id !== currentPost.id && 
-      (post.category === currentPost.category || 
-       post.tags.split(',').some(tag => currentPost.tags.includes(tag.trim())))
+    .filter(post =>
+      post.id !== currentPost.id &&
+      (post.category === currentPost.category ||
+        post.tags.split(',').some(tag => currentPost.tags.includes(tag.trim())))
     )
     .slice(0, 3);
 }
 
 // Mock comments data
-async function getCommentsByPostId(_postId: string) {
+async function getCommentsByPostId(_postId: string) { // eslint-disable-line @typescript-eslint/no-unused-vars
   return [
     {
       id: '101',
@@ -110,13 +110,13 @@ async function getCommentsByPostId(_postId: string) {
 // Generate metadata for the page
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const post = await getPostBySlug(params.slug);
-  
+
   if (!post) {
     return {
       title: 'Blog Post Not Found - Dr. Oluropo Apalowo'
     };
   }
-  
+
   return {
     title: `${post.title} - Dr. Oluropo Apalowo's Blog`,
     description: post.excerpt,
@@ -136,16 +136,16 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 // Main page component
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = await getPostBySlug(params.slug);
-  
+
   // Return 404 if post not found
   if (!post) {
     notFound();
   }
-  
+
   // Get related posts and comments
   const relatedPosts = await getRelatedPosts(post);
   const comments = await getCommentsByPostId(post.id);
-  
+
   return (
     <div className="min-h-screen">
       <Section bgColor="white" className="py-12 sm:py-20">

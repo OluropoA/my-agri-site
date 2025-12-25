@@ -80,44 +80,44 @@ export default function ResearchPage() {
   return (
     <div className="min-h-screen">
       <StructuredData data={breadcrumbSchema} />
-      <PageHero 
-        title="Research Focus Areas" 
+      <PageHero
+        title="Research Focus Areas"
         subtitle="Advancing agricultural science through interdisciplinary research that addresses global food security challenges and environmental sustainability."
         backgroundImage="/images/research-header.jpg"
         align="center"
       />
-      
+
       <Section bgColor="white">
         {/* Research Interest */}
         <div className="mb-16">
-          <SectionHeading 
-            title="Research Interest" 
+          <SectionHeading
+            title="Research Interest"
             subtitle=""
           />
           <div className="prose prose-lg text-brand-charcoal/80 font-secondary max-w-none">
             <p>
-              I am focused on making agriculture smarter, more resilient, and farmer-friendly. My area of specialization is plant pathology, 
+              I am focused on making agriculture smarter, more resilient, and farmer-friendly. My area of specialization is plant pathology,
               where I study how tiny but destructive organisms affect crops and explore sustainable ways to manage them.
             </p>
-            
+
             <p>
-              I also work in crop protection and integrated pest management (IPM), with a strong focus on eco-friendly solutions that reduce 
-              over-reliance on chemical pesticides. I am passionate about understanding how climate change is shifting pest and disease patterns 
+              I also work in crop protection and integrated pest management (IPM), with a strong focus on eco-friendly solutions that reduce
+              over-reliance on chemical pesticides. I am passionate about understanding how climate change is shifting pest and disease patterns
               and what these changes mean for food security.
             </p>
-            
+
             <p>
-              Another area that excites me is the application of digital tools and artificial intelligence in agriculture. Through ideas like 
+              Another area that excites me is the application of digital tools and artificial intelligence in agriculture. Through ideas like
               NemaPredictAI, I explore how technology can forecast pest outbreaks and help farmers make better decisions.
             </p>
-            
+
             <p>
-              Beyond science, I am deeply interested in agricultural policy and food economics, particularly the drivers of food price 
+              Beyond science, I am deeply interested in agricultural policy and food economics, particularly the drivers of food price
               inflation and how well-designed policies can build more resilient and affordable food systems.
             </p>
-            
+
             <p>
-              In all of this, my aim is to connect science, technology, and policy in ways that create practical, real-world solutions for 
+              In all of this, my aim is to connect science, technology, and policy in ways that create practical, real-world solutions for
               farmers and communities.
             </p>
           </div>
@@ -133,7 +133,7 @@ export default function ResearchPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-brand-charcoal font-primary mb-3">{area.title}</h3>
                 <p className="text-brand-charcoal/70 font-secondary mb-4">{area.description}</p>
-                <a 
+                <a
                   href={area.link}
                   className="inline-flex items-center text-brand-green font-medium hover:text-brand-emerald font-primary"
                 >
@@ -146,33 +146,32 @@ export default function ResearchPage() {
         </div>
 
       </Section>
-      
+
       <Section bgColor="light" className="bg-gradient-to-br from-brand-ivory/70 via-white to-brand-ivory/50">
         {/* Current Projects */}
         <div className="mb-12">
-          <SectionHeading 
-            title="Current Research Projects" 
+          <SectionHeading
+            title="Current Research Projects"
             subtitle="Ongoing scientific investigations and development work"
             align="center"
             className="mb-8"
           />
-          
+
           <div className="grid lg:grid-cols-3 gap-8">
             {currentProjects.map((project, index) => (
               <div key={index} className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-all duration-300 border border-brand-green/15 hover:border-brand-green/40">
                 <div className="flex items-center justify-between mb-4">
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium font-primary ${
-                    project.status === 'Ongoing' ? 'bg-brand-green/10 text-brand-green' :
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium font-primary ${project.status === 'Ongoing' ? 'bg-brand-green/10 text-brand-green' :
                     project.status === 'Development Phase' ? 'bg-brand-emerald/10 text-brand-emerald' :
-                    'bg-brand-gold/10 text-brand-gold'
-                  }`}>
+                      'bg-brand-gold/10 text-brand-gold'
+                    }`}>
                     {project.status}
                   </span>
                 </div>
-                
+
                 <h4 className="font-bold text-brand-green mb-3 leading-tight font-primary">{project.title}</h4>
                 <p className="text-brand-charcoal/70 text-sm mb-4 leading-relaxed font-secondary">{project.description}</p>
-                
+
                 <div className="text-xs text-brand-charcoal/60 font-secondary">
                   <span className="font-medium font-primary">Funding:</span> {project.funding}
                 </div>
@@ -182,16 +181,16 @@ export default function ResearchPage() {
         </div>
 
       </Section>
-      
+
       {/* Projects and Collaborations */}
       <Section bgColor="white" className="bg-gradient-to-b from-white to-brand-ivory/30">
-        <SectionHeading 
-          title="Projects and Collaborations" 
+        <SectionHeading
+          title="Affiliation and project collaborations"
           subtitle="Working together to advance agricultural science and practice"
           align="center"
           className="mb-8"
         />
-        
+
         <div className="grid md:grid-cols-3 gap-8 mb-10">
           {/* University Research */}
           <Link href="/research/collaborations/university" className="rounded-xl overflow-hidden shadow-md h-64 relative border border-brand-green/15 bg-white hover:shadow-lg transition-all">
@@ -205,7 +204,7 @@ export default function ResearchPage() {
               </div>
             </div>
           </Link>
-          
+
           {/* Climate Smart Initiative */}
           <Link href="/research/collaborations/climate-change" className="rounded-xl overflow-hidden shadow-md h-64 relative border border-brand-green/15 bg-white hover:shadow-lg transition-all">
             <div className="absolute inset-0 flex items-center justify-center bg-brand-emerald/10 p-6 text-center">
@@ -218,7 +217,7 @@ export default function ResearchPage() {
               </div>
             </div>
           </Link>
-          
+
           {/* IUPAC Collaboration */}
           <Link href="/research/collaborations/iupac" className="rounded-xl overflow-hidden shadow-md h-64 relative border border-brand-green/15 bg-white hover:shadow-lg transition-all">
             <div className="absolute inset-0 flex items-center justify-center bg-brand-green/10 p-6 text-center">
@@ -226,27 +225,27 @@ export default function ResearchPage() {
                 <div className="w-20 h-20 bg-brand-green/20 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <span className="text-brand-green">Logo</span>
                 </div>
-                <h4 className="font-bold text-brand-green">IUPAC Collaboration</h4>
+                <h4 className="font-bold text-brand-green">IUPAC NextGen</h4>
                 <p className="text-sm text-brand-charcoal/70">Next Generation Program</p>
               </div>
             </div>
           </Link>
         </div>
-        
+
         <div className="text-center">
           <p className="text-brand-charcoal/70 font-secondary italic">Images and logos of affiliated organizations will be displayed here.</p>
         </div>
       </Section>
-      
+
       {/* Publications Section */}
       <Section bgColor="light">
-        <SectionHeading 
-          title="Publications" 
+        <SectionHeading
+          title="Publications"
           subtitle="Academic contributions and research papers"
           align="center"
           className="mb-8"
         />
-        
+
         <div className="space-y-4 mb-10">
           {/* Publication 1 */}
           <div className="bg-white rounded-xl shadow-sm p-6 border border-brand-brown/10 hover:shadow-md transition-all">
@@ -261,7 +260,7 @@ export default function ResearchPage() {
               </a>
             </div>
           </div>
-          
+
           {/* Publication 2 */}
           <div className="bg-white rounded-xl shadow-sm p-6 border border-brand-brown/10 hover:shadow-md transition-all">
             <h4 className="font-bold text-brand-charcoal mb-2 font-primary">Genetic Structure of Cucumber Mosaic Virus From Natural Hosts in Nigeria Reveals High Diversity and Occurrence of Putative Novel Recombinant Strains</h4>
@@ -275,7 +274,7 @@ export default function ResearchPage() {
               </a>
             </div>
           </div>
-          
+
           {/* Publication 3 */}
           <div className="bg-white rounded-xl shadow-sm p-6 border border-brand-brown/10 hover:shadow-md transition-all">
             <h4 className="font-bold text-brand-charcoal mb-2 font-primary">Bioactivity Of Aqueous Extract Of Vernonia Amygdalina And Peperomia Pellucida On Meloidogyne Incognita Infecting Two Telfairia Occidentalis Accessions</h4>
@@ -303,7 +302,7 @@ export default function ResearchPage() {
               </a>
             </div>
           </div>
-          
+
           {/* Publication 5 */}
           <div className="bg-white rounded-xl shadow-sm p-6 border border-brand-brown/10 hover:shadow-md transition-all">
             <h4 className="font-bold text-brand-charcoal mb-2 font-primary">Histopathology Of Watermelon Root Infected With Root-Knot Nematode (Meloidogyne spp.)</h4>
@@ -318,7 +317,7 @@ export default function ResearchPage() {
             </div>
           </div>
         </div>
-        
+
         {/* Show More Publications button */}
         <div className="text-center">
           <p className="text-brand-charcoal/70 font-secondary mb-6">Showing 5 of 10 publications</p>
@@ -330,40 +329,8 @@ export default function ResearchPage() {
           </Link>
         </div>
       </Section>
-      
-      {/* Research Impact Section */}
-      <Section bgColor="white">
-        {/* Research Impact */}
-        <div className="bg-gradient-to-r from-brand-green to-brand-emerald rounded-xl p-8 md:p-12 text-white text-center shadow-lg">
-          <h3 className="text-2xl font-bold mb-4 font-primary">Research Impact & Collaboration</h3>
-          <p className="text-brand-ivory/90 mb-8 max-w-3xl mx-auto font-secondary">
-            My research contributes to global food security through innovative solutions that benefit 
-            smallholder farmers, promote environmental sustainability, and advance agricultural science.
-          </p>
-          
-          <div className="grid md:grid-cols-3 gap-8 mb-10">
-            <div>
-              <div className="text-3xl font-bold mb-2 font-primary text-brand-gold">10+</div>
-              <div className="text-brand-ivory/90 font-secondary">Published Papers</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2 font-primary text-brand-gold">5</div>
-              <div className="text-brand-ivory/90 font-secondary">International Collaborations</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2 font-primary text-brand-gold">100+</div>
-              <div className="text-brand-ivory/90 font-secondary">Farmers Impacted</div>
-            </div>
-          </div>
-          
-          <Link href="/publications">
-            <Button variant="secondary" size="lg" className="bg-white text-brand-green hover:bg-white/90 font-primary">
-              View Publications
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </Link>
-        </div>
-      </Section>
+
+
     </div>
   )
 }

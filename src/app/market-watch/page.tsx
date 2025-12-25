@@ -138,7 +138,7 @@ async function getMarketCommentary() {
     weekStart: new Date('2025-09-08'),
     author: {
       id: '101',
-      name: 'Dr. Oluropo Apalowo',
+      name: 'Dr. \'Ropo Apalowo',
       email: 'oluropo.apalowo@unizik.edu.ng'
     },
     createdAt: new Date('2025-09-10'),
@@ -229,32 +229,32 @@ export default async function MarketWatchPage() {
   const commentary = await getMarketCommentary();
   const farmerQuotes = await getFarmerQuotes();
   const inflationData = await getInflationData();
-  
+
   // Get unique filter values
   const states = await getUniqueStates();
   const markets = await getUniqueMarkets();
   const commodities = await getUniqueCommodities();
-  
+
   // Get current week
   const currentWeek = new Date('2025-09-08');
   // Get current month
-  const currentMonth = currentWeek.toLocaleDateString('en-US', {month: 'long'});
-  
+  const currentMonth = currentWeek.toLocaleDateString('en-US', { month: 'long' });
+
   return (
     <div className="min-h-screen">
-      <PageHero 
-        title="Agricultural Market Watch" 
+      <PageHero
+        title="Agricultural Market Watch"
         subtitle="Weekly food price updates, market trends, and expert analysis to keep you informed about Nigeria's agricultural markets."
         backgroundImage="/images/market-watch-header.jpg"
         align="center"
       />
-      
+
       {/* Price Trends and Inflation Overview Section */}
       <Section bgColor="white">
         <div className="mb-8">
-          <SectionHeading 
-            title="Market Overview" 
-            subtitle={`Week of ${currentWeek.toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'})}`} 
+          <SectionHeading
+            title="Market Overview"
+            subtitle={`Week of ${currentWeek.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`}
             className="mb-6"
           />
           <div className="grid md:grid-cols-2 gap-8">
@@ -264,7 +264,7 @@ export default async function MarketWatchPage() {
               previousMonthIndex={inflationData.previousMonthIndex}
               previousYearIndex={inflationData.previousYearIndex}
             />
-            
+
             {/* Price Trends (Gainers & Losers) */}
             <PriceTrends
               currentPrices={priceEntries}
@@ -273,13 +273,13 @@ export default async function MarketWatchPage() {
           </div>
         </div>
       </Section>
-      
+
       {/* Market Table Section */}
       <Section bgColor="light">
         <div className="mb-16">
-          <SectionHeading 
-            title="Current Market Prices" 
-            subtitle="Filter by state, market, or commodity to find specific prices" 
+          <SectionHeading
+            title="Current Market Prices"
+            subtitle="Filter by state, market, or commodity to find specific prices"
             className="mb-6"
           />
           <MarketTable
@@ -295,8 +295,8 @@ export default async function MarketWatchPage() {
       {/* Comparison and Insights Section */}
       <Section bgColor="white">
         <div className="mb-12">
-          <SectionHeading 
-            title="Market Insights" 
+          <SectionHeading
+            title="Market Insights"
             subtitle="Compare prices and understand market trends"
             className="mb-8"
           />
@@ -309,7 +309,7 @@ export default async function MarketWatchPage() {
                 commodities={commodities}
               />
             </div>
-            
+
             {/* Seasonal Insights */}
             <div>
               <SeasonalInsights currentMonth={currentMonth} />
@@ -317,13 +317,13 @@ export default async function MarketWatchPage() {
           </div>
         </div>
       </Section>
-      
+
       {/* Price Chart Section */}
       <Section bgColor="light">
         <div className="mb-8">
-          <SectionHeading 
-            title="Price Trends" 
-            subtitle="Historical price movements for key agricultural commodities" 
+          <SectionHeading
+            title="Price Trends"
+            subtitle="Historical price movements for key agricultural commodities"
             className="mb-6"
           />
           <PriceChart
@@ -334,12 +334,12 @@ export default async function MarketWatchPage() {
           />
         </div>
       </Section>
-      
+
       {/* Interactive Tools Section */}
       <Section bgColor="white">
         <div className="mb-12">
-          <SectionHeading 
-            title="Interactive Tools" 
+          <SectionHeading
+            title="Interactive Tools"
             subtitle="Visualize and calculate food costs"
             className="mb-8"
           />
@@ -349,7 +349,7 @@ export default async function MarketWatchPage() {
               priceEntries={priceEntries}
               commodities={commodities}
             />
-            
+
             {/* Meal Cost Calculator */}
             <MealCostCalculator
               priceEntries={priceEntries}
@@ -358,14 +358,14 @@ export default async function MarketWatchPage() {
           </div>
         </div>
       </Section>
-        
+
       {/* Market Insights Section */}
       <Section bgColor="light">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div className="md:col-span-2">
-            <SectionHeading 
-              title="Weekly Market Analysis" 
-              subtitle="Expert commentary on current market conditions and future trends" 
+            <SectionHeading
+              title="Weekly Market Analysis"
+              subtitle="Expert commentary on current market conditions and future trends"
               className="mb-6"
             />
             <div className="space-y-8">
@@ -377,14 +377,14 @@ export default async function MarketWatchPage() {
                 createdAt={commentary.createdAt}
                 comments={commentary.comments}
               />
-              
+
               <MarketCommentForm marketId={commentary.id} />
             </div>
           </div>
-          
+
           <div>
-            <SectionHeading 
-              title="Farmer Voices" 
+            <SectionHeading
+              title="Farmer Voices"
               subtitle="Insights from the field"
               className="mb-6"
             />

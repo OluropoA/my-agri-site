@@ -5,6 +5,7 @@ import { Send } from 'lucide-react';
 import { useSession } from 'next-auth/react';
 import { Button } from '@/components/ui/button';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function BlogCommentForm({ postId }: { postId: string }) {
   const { data: session } = useSession();
   const [comment, setComment] = useState('');
@@ -16,7 +17,7 @@ function BlogCommentForm({ postId }: { postId: string }) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!comment.trim()) {
       setSubmitStatus({
         type: 'error',
@@ -24,14 +25,14 @@ function BlogCommentForm({ postId }: { postId: string }) {
       });
       return;
     }
-    
+
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: null });
-    
+
     try {
       // In a real implementation, this would be a fetch call to an API endpoint
       // For now, we'll just simulate a successful submission
-      
+
       // Mock API call
       // const response = await fetch('/api/comments', {
       //   method: 'POST',
@@ -43,19 +44,19 @@ function BlogCommentForm({ postId }: { postId: string }) {
       //     body: comment,
       //   }),
       // });
-      
+
       // if (!response.ok) throw new Error('Failed to submit comment');
-      
+
       // Simulate API delay
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       // Reset form state
       setComment('');
       setSubmitStatus({
         type: 'success',
         message: 'Your comment has been submitted and is awaiting approval.'
       });
-      
+
       // In a real app, you would update the comments list with the newly added comment
     } catch {
       setSubmitStatus({
@@ -84,13 +85,13 @@ function BlogCommentForm({ postId }: { postId: string }) {
               className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-gold focus:border-brand-green font-secondary"
             />
           </div>
-          
+
           <div className="flex items-center justify-between">
             <div className="text-sm text-brand-charcoal/60 font-secondary">
               Commenting as <span className="font-medium font-primary">{session.user?.name}</span>
             </div>
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               className="bg-brand-green hover:bg-brand-emerald text-white font-primary"
               disabled={isSubmitting}
             >
@@ -102,13 +103,12 @@ function BlogCommentForm({ postId }: { postId: string }) {
               )}
             </Button>
           </div>
-          
+
           {submitStatus.message && (
-            <div className={`mt-3 p-3 rounded-md ${
-              submitStatus.type === 'success' 
+            <div className={`mt-3 p-3 rounded-md ${submitStatus.type === 'success'
                 ? 'bg-brand-green/10 text-brand-green border border-brand-green/20'
                 : 'bg-red-50 text-red-700 border border-red-200'
-            }`}>
+              }`}>
               {submitStatus.message}
             </div>
           )}
@@ -119,7 +119,7 @@ function BlogCommentForm({ postId }: { postId: string }) {
           <p className="text-brand-charcoal/70 mb-4 font-secondary">
             You need to be signed in to leave a comment on this article.
           </p>
-          <Button 
+          <Button
             asChild
             className="bg-brand-green hover:bg-brand-emerald text-white font-primary"
           >
