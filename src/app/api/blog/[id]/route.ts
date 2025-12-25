@@ -66,7 +66,6 @@ export async function PUT(
                 slug,
                 category,
                 tags,
-                coverImage,
                 published,
             },
             include: {

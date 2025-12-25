@@ -79,7 +79,6 @@ export async function POST(request: NextRequest) {
                 slug,
                 category: category || 'Uncategorized',
                 tags: tags || '',
-                coverImage,
                 published: published || false,
                 authorId: session.user.id,
             },
