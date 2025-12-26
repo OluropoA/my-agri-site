@@ -215,19 +215,19 @@ export default function AdminDashboardPage() {
             <div className="grid grid-cols-2 gap-3">
               <Link 
                 href="/admin/blog/new"
-                className="bg-[#2D5016] text-white p-3 rounded-lg text-center text-sm hover:bg-[#2D5016]/90 transition-colors"
+                className="bg-[#2D5016] text-brand-ivory font-semibold p-3 rounded-lg text-center text-sm hover:bg-[#2D5016]/90 transition-colors"
               >
                 New Blog Post
               </Link>
               <Link 
                 href="/admin/market-watch/new"
-                className="bg-[#2D5016] text-white p-3 rounded-lg text-center text-sm hover:bg-[#2D5016]/90 transition-colors"
+                className="bg-[#2D5016] text-brand-ivory font-semibold p-3 rounded-lg text-center text-sm hover:bg-[#2D5016]/90 transition-colors"
               >
                 Market Update
               </Link>
               <Link 
                 href="/admin/sellers/new"
-                className="bg-[#2D5016] text-white p-3 rounded-lg text-center text-sm hover:bg-[#2D5016]/90 transition-colors"
+                className="bg-[#2D5016] text-brand-ivory font-semibold p-3 rounded-lg text-center text-sm hover:bg-[#2D5016]/90 transition-colors"
               >
                 Add Seller
               </Link>

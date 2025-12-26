@@ -30,12 +30,15 @@ interface BlogListProps {
   categories: string[];
 }
 
+const POSTS_PER_PAGE = 6;
+
 const BlogList: React.FC<BlogListProps> = ({ initialPosts, categories }) => {
   const [posts, setPosts] = useState<BlogPost[]>(initialPosts);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [sortOption, setSortOption] = useState<'newest' | 'oldest'>('newest');
   const [filterOpen, setFilterOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
   // Filter posts based on search query and category
   useEffect(() => {
@@ -67,7 +70,15 @@ const BlogList: React.FC<BlogListProps> = ({ initialPosts, categories }) => {
     });
     
     setPosts(filteredPosts);
+    setCurrentPage(1);
   }, [initialPosts, searchQuery, selectedCategory, sortOption]);
+
+  useEffect(() => {
+    const lastPage = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
+    if (currentPage > lastPage) {
+      setCurrentPage(lastPage);
+    }
+  }, [posts, currentPage]);
 
   // Format date to readable string
   const formatDate = (date: Date) => {
@@ -77,6 +88,14 @@ const BlogList: React.FC<BlogListProps> = ({ initialPosts, categories }) => {
       day: 'numeric'
     }).format(new Date(date));
   };
+
+  const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
+  const indexOfLastPost = currentPage * POSTS_PER_PAGE;
+  const indexOfFirstPost = indexOfLastPost - POSTS_PER_PAGE;
+  const paginatedPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+  const canGoPrevious = currentPage > 1;
+  const canGoNext = currentPage < totalPages;
 
   return (
     <div className="space-y-8">
@@ -164,9 +183,9 @@ const BlogList: React.FC<BlogListProps> = ({ initialPosts, categories }) => {
       </div>
       
       {/* Blog Posts Grid */}
-      {posts.length > 0 ? (
+      {paginatedPosts.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
+          {paginatedPosts.map((post) => (
             <div key={post.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100">
               {/* Post Image */}
               <Link href={`/blog/${post.slug}`}>
@@ -235,26 +254,43 @@ const BlogList: React.FC<BlogListProps> = ({ initialPosts, categories }) => {
         </div>
       )}
       
-      {/* Pagination placeholder - would be implemented with actual pagination */}
-      <div className="flex justify-center mt-12">
-        <nav className="inline-flex rounded-md shadow-sm">
-          <button className="px-4 py-2 text-sm font-medium bg-white border border-gray-200 rounded-l-md text-brand-charcoal hover:bg-brand-ivory font-primary">
-            Previous
-          </button>
-          <button className="px-4 py-2 text-sm font-medium bg-brand-green border border-brand-green text-white font-primary">
-            1
-          </button>
-          <button className="px-4 py-2 text-sm font-medium bg-white border border-gray-200 text-brand-charcoal hover:bg-brand-ivory font-primary">
-            2
-          </button>
-          <button className="px-4 py-2 text-sm font-medium bg-white border border-gray-200 text-brand-charcoal hover:bg-brand-ivory font-primary">
-            3
-          </button>
-          <button className="px-4 py-2 text-sm font-medium bg-white border border-gray-200 rounded-r-md text-brand-charcoal hover:bg-brand-ivory font-primary">
-            Next
-          </button>
-        </nav>
-      </div>
+      {posts.length > POSTS_PER_PAGE && (
+        <div className="flex justify-center mt-12">
+          <nav className="flex items-center gap-2 flex-wrap">
+            <button
+              onClick={() => canGoPrevious && setCurrentPage((page) => page - 1)}
+              disabled={!canGoPrevious}
+              className="px-4 py-2 text-sm font-medium bg-white border border-gray-200 rounded-md text-brand-charcoal hover:bg-brand-ivory font-primary disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Previous
+            </button>
+
+            <div className="flex flex-wrap gap-2">
+              {pageNumbers.map((page) => (
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`px-4 py-2 text-sm font-medium border rounded-md font-primary transition-colors ${
+                    page === currentPage
+                      ? 'bg-brand-green border-brand-green text-white'
+                      : 'bg-white border-gray-200 text-brand-charcoal hover:bg-brand-ivory'
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={() => canGoNext && setCurrentPage((page) => page + 1)}
+              disabled={!canGoNext}
+              className="px-4 py-2 text-sm font-medium bg-white border border-gray-200 rounded-md text-brand-charcoal hover:bg-brand-ivory font-primary disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Next
+            </button>
+          </nav>
+        </div>
+      )}
     </div>
   );
 };

@@ -219,8 +219,8 @@ export default function AdminPage() {
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h2>
               <div className="grid grid-cols-1 gap-3">
-                <Button asChild className="bg-brand-green hover:bg-brand-green/90 text-white justify-start">
-                  <Link href="/admin/blog/new">
+                <Button asChild className="bg-brand-green hover:bg-brand-green/90 text-brand-ivory font-semibold justify-start">
+                  <Link href="/admin/blog/new" className="flex items-center">
                     <Plus className="mr-2 h-4 w-4" />
                     New Blog Post
                   </Link>
