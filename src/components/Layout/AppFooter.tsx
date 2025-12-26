@@ -1,6 +1,6 @@
 "use client";
 
-import { Leaf, Mail, Phone, MapPin, Linkedin, Twitter, Globe, ArrowUp } from 'lucide-react'
+import { Leaf, Mail, MapPin, Linkedin, Twitter, Globe, ArrowUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const AppFooter = () => {
@@ -50,11 +50,7 @@ const AppFooter = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-sm" style={{ color: '#FFFFFF' }}>
                 <Mail className="w-4 h-4" style={{ color: '#DAA520' }} />
-                <span>oluropo.apalowo@unizik.edu.ng</span>
-              </div>
-              <div className="flex items-center space-x-3 text-sm" style={{ color: '#FFFFFF' }}>
-                <Phone className="w-4 h-4" style={{ color: '#DAA520' }} />
-                <span>+234 806 214 2261</span>
+                <span>contact@ropoapalowo.com</span>
               </div>
               <div className="flex items-center space-x-3 text-sm" style={{ color: '#FFFFFF' }}>
                 <MapPin className="w-4 h-4" style={{ color: '#DAA520' }} />
