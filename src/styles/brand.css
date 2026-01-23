@@ -21,6 +21,18 @@
   --font-accent: 'Playfair Display', serif;
 }
 
+/* Dark theme overrides */
+.dark {
+  --color-forest-green: #4ADE80;
+  --color-golden-harvest: #FACC15;
+  --color-earth-brown: #A16207;
+  --color-pure-white: #F8FAFC;
+  --color-deep-emerald: #22C55E;
+  --color-warm-ivory: #0F172A;
+  --color-charcoal-gray: #E2E8F0;
+  --color-sage-green: #86EFAC;
+}
+
 /* Base typography setup */
 body {
   font-family: var(--font-secondary);
@@ -28,6 +40,10 @@ body {
   line-height: 1.6;
   /* Removed fixed background-color to allow dynamic changes */
   transition: background-color 0.4s ease;
+}
+
+.dark body {
+  background-color: var(--color-warm-ivory);
 }
 
 h1, h2, h3, h4, h5, h6 {
