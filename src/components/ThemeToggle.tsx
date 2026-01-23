@@ -6,13 +6,27 @@ import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 
 export function ThemeToggle() {
-    const { theme, setTheme } = useTheme()
+    const { resolvedTheme, setTheme } = useTheme()
+    const [mounted, setMounted] = React.useState(false)
+
+    React.useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    const toggleTheme = () => {
+        const nextTheme = resolvedTheme === "dark" ? "light" : "dark"
+        setTheme(nextTheme)
+    }
+
+    if (!mounted) {
+        return null
+    }
 
     return (
         <Button
             variant="ghost"
             size="icon"
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            onClick={toggleTheme}
             className="rounded-full w-9 h-9"
             aria-label="Toggle theme"
         >
