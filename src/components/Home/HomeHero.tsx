@@ -10,7 +10,7 @@ export default function HomeHero() {
   return (
     <div className="relative bg-white overflow-hidden min-h-screen flex items-center">
       {/* Subtle dotted pattern background - inspired by carrot.tech */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div
           className="absolute inset-0"
           style={{

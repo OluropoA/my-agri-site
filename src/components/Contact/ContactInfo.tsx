@@ -19,7 +19,7 @@ const ContactInfo = () => {
           </div>
           <div>
             <p className="font-medium font-primary">Email</p>
-            <p className="text-brand-ivory/90 font-secondary">oluropo.apalowo@unizik.edu.ng</p>
+            <p className="text-brand-ivory/90 font-secondary">contact@ropoapalowo.com</p>
           </div>
         </div>
         

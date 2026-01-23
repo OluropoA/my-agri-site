@@ -58,22 +58,10 @@ export default function ResearchPage() {
 
   const currentProjects = [
     {
-      title: "Molecular Identification of Nematodes in Talinum triangulare",
+      title: "Molecular identification and characterization of Scutellonema Species Associated with yam in Kwara State, Nigeria",
       status: "Ongoing",
-      description: "Investigating nematode species affecting waterleaf cultivation and their impact on food security in Anambra State.",
-      funding: "University Research Grant"
-    },
-    {
-      title: "AI-Powered Crop Disease Detection System",
-      status: "Development Phase",
-      description: "Creating machine learning models for early detection of plant diseases using computer vision technology.",
-      funding: "IUPAC Innovation Grant"
-    },
-    {
-      title: "Botanical Nematicides from Indigenous Plants",
-      status: "Field Trials",
-      description: "Evaluating the efficacy of plant extracts from Chromolaena odorata and Vernonia amygdalina for nematode control.",
-      funding: "Collaborative Research"
+      description: "Investigating the diversity and characteristics of Scutellonema species associated with yam cultivation in Kwara State.",
+      funding: "collaborative research"
     }
   ]
 
@@ -213,7 +201,7 @@ export default function ResearchPage() {
                   <span className="text-brand-emerald">Logo</span>
                 </div>
                 <h4 className="font-bold text-brand-green">Climate Smart Initiative</h4>
-                <p className="text-sm text-brand-charcoal/70">Community Outreach Program</p>
+                <p className="text-sm text-brand-charcoal/70">GRENCHI (Green Environment and Climate change Initiative)</p>
               </div>
             </div>
           </Link>
