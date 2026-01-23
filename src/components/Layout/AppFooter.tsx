@@ -1,23 +1,24 @@
 "use client";
 
 import { Leaf, Mail, MapPin, Linkedin, Twitter, Globe, ArrowUp } from 'lucide-react'
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 
 const AppFooter = () => {
   const quickLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Research', href: '#research' },
-    { name: 'Publications', href: '#publications' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'About', href: '/about' },
+    { name: 'Research', href: '/research' },
+    { name: 'Publications', href: '/publications' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' }
   ]
 
   const researchAreas = [
-    { name: 'Nematology', href: '#' },
-    { name: 'Plant Virology', href: '#' },
-    { name: 'Crop Protection', href: '#' },
-    { name: 'AI in Agriculture', href: '#' },
-    { name: 'Sustainable Farming', href: '#' }
+    { name: 'Nematology', href: '/research' },
+    { name: 'Plant Virology', href: '/research' },
+    { name: 'Crop Protection', href: '/research' },
+    { name: 'AI in Agriculture', href: '/research' },
+    { name: 'Sustainable Farming', href: '/research' }
   ]
 
   const scrollToTop = () => {
@@ -78,13 +79,13 @@ const AppFooter = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
+                  <Link 
                     href={link.href}
                     className="hover:opacity-80 transition-opacity duration-200 text-sm font-secondary"
                     style={{ color: '#FFFFFF' }}
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -96,13 +97,13 @@ const AppFooter = () => {
             <ul className="space-y-3">
               {researchAreas.map((area, index) => (
                 <li key={index}>
-                  <a 
+                  <Link 
                     href={area.href}
                     className="hover:opacity-80 transition-opacity duration-200 text-sm font-secondary"
                     style={{ color: '#FFFFFF' }}
                   >
                     {area.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -146,12 +147,12 @@ const AppFooter = () => {
           </div>
           
           <div className="flex items-center space-x-6">
-            <a href="#" className="text-sm hover:opacity-80 transition-opacity duration-200 font-secondary" style={{ color: '#FFFFFF' }}>
+            <Link href="/privacy" className="text-sm hover:opacity-80 transition-opacity duration-200 font-secondary" style={{ color: '#FFFFFF' }}>
               Privacy Policy
-            </a>
-            <a href="#" className="text-sm hover:opacity-80 transition-opacity duration-200 font-secondary" style={{ color: '#FFFFFF' }}>
+            </Link>
+            <Link href="/terms-of-use" className="text-sm hover:opacity-80 transition-opacity duration-200 font-secondary" style={{ color: '#FFFFFF' }}>
               Terms of Use
-            </a>
+            </Link>
             <button
               onClick={scrollToTop}
               className="p-2 rounded-lg hover:opacity-80 transition-opacity duration-200 group"
