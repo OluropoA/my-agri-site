@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useSession, signOut } from 'next-auth/react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { ThemeToggle } from '../ThemeToggle';
 
@@ -94,7 +93,9 @@ export default function Header() {
             <button
               type="button"
               className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-brand-green hover:bg-brand-green/10 transition-colors"
-              onClick={() => setMobileMenuOpen(true)}
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-nav-drawer"
             >
               <span className="sr-only">Open main menu</span>
               <Menu className="h-6 w-6" aria-hidden="true" />
@@ -102,27 +103,20 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile menu - Slide out drawer */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <>
-              {/* Backdrop */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setMobileMenuOpen(false)}
-                className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm lg:hidden"
-              />
+        {/* Mobile menu drawer */}
+        {mobileMenuOpen && (
+          <>
+            <button
+              type="button"
+              aria-label="Close mobile menu backdrop"
+              onClick={() => setMobileMenuOpen(false)}
+              className="fixed inset-0 z-[60] bg-black/20 backdrop-blur-sm lg:hidden"
+            />
 
-              {/* Drawer */}
-              <motion.div
-                initial={{ x: '100%' }}
-                animate={{ x: 0 }}
-                exit={{ x: '100%' }}
-                transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white shadow-xl lg:hidden flex flex-col"
-              >
+            <div
+              id="mobile-nav-drawer"
+              className="fixed inset-y-0 right-0 z-[70] w-full max-w-sm bg-white shadow-xl lg:hidden flex flex-col"
+            >
                 <div className="flex items-center justify-between px-6 py-6 border-b border-gray-100">
                   <div className="flex items-center">
                     <span className="text-xl font-bold text-brand-green font-primary">Menu</span>
@@ -141,13 +135,8 @@ export default function Header() {
                 </div>
 
                 <div className="flex-1 overflow-y-auto px-6 py-6 space-y-2">
-                  {navigation.map((item, index) => (
-                    <motion.div
-                      key={item.name}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                    >
+                  {navigation.map((item) => (
+                    <div key={item.name}>
                       <Link
                         href={item.href}
                         className={`${pathname === item.href ? 'bg-brand-green/10 text-brand-green border-l-4 border-brand-green' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
@@ -156,15 +145,11 @@ export default function Header() {
                       >
                         {item.name}
                       </Link>
-                    </motion.div>
+                    </div>
                   ))}
 
                   {session?.user?.role === 'ADMIN' && (
-                    <motion.div
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: navigation.length * 0.1 }}
-                    >
+                    <div>
                       <Link
                         href="/admin"
                         className={`${pathname === '/admin' ? 'bg-brand-green/10 text-brand-green border-l-4 border-brand-green' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
@@ -173,7 +158,7 @@ export default function Header() {
                       >
                         Admin Dashboard
                       </Link>
-                    </motion.div>
+                    </div>
                   )}
                 </div>
 
@@ -203,10 +188,9 @@ export default function Header() {
                     </p>
                   )}
                 </div>
-              </motion.div>
-            </>
-          )}
-        </AnimatePresence>
+              </div>
+          </>
+        )}
       </nav>
     </header>
   );
